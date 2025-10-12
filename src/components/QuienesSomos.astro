@@ -1,0 +1,88 @@
+---
+import { Building2, Users, Award, Target } from "lucide-react";
+---
+
+<section id="quienes-somos" class="py-20 bg-white dark:bg-slate-950">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        Quiénes Somos
+      </h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400">
+        Somos un equipo de profesionales comprometidos con la excelencia en ingeniería,
+        ofreciendo soluciones integrales para cada tipo de proyecto.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Tarjeta 1: Experiencia -->
+      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Building2 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+          Experiencia
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">
+          Años de trayectoria desarrollando proyectos de ingeniería de alta calidad en diversos sectores.
+        </p>
+      </div>
+
+      <!-- Tarjeta 2: Equipo -->
+      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Users className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+          Equipo Profesional
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">
+          Ingenieros especializados en diferentes áreas, garantizando soluciones integrales.
+        </p>
+      </div>
+
+      <!-- Tarjeta 3: Calidad -->
+      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Award className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+          Calidad Certificada
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">
+          Cumplimiento de normativas y estándares de calidad en todos nuestros proyectos.
+        </p>
+      </div>
+
+      <!-- Tarjeta 4: Compromiso -->
+      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Target className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+          Compromiso
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">
+          Dedicados a superar las expectativas de nuestros clientes en cada proyecto.
+        </p>
+      </div>
+    </div>
+
+    <!-- Descripción adicional -->
+    <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-indigo-50 to-slate-50 dark:from-indigo-950/30 dark:to-slate-900 p-8 rounded-xl border border-indigo-100 dark:border-indigo-900/30">
+      <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+        Nuestra Misión
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">
+        Proporcionar servicios de ingeniería de la más alta calidad, combinando conocimiento técnico,
+        innovación y compromiso con el cliente. Nos especializamos en proyectos de actividades,
+        instalaciones interiores e infraestructuras, ofreciendo soluciones personalizadas que
+        se adaptan a las necesidades específicas de cada cliente.
+      </p>
+      <p class="text-slate-600 dark:text-slate-400">
+        Nuestro equipo multidisciplinario trabaja con las últimas tecnologías y metodologías
+        para garantizar resultados excepcionales, respetando plazos, presupuestos y normativas vigentes.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,200 @@
+---
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Building, Home, Route } from "lucide-react";
+---
+
+<section id="proyectos" class="py-20 bg-slate-50 dark:bg-slate-900">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        Proyectos Destacados
+      </h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400">
+        Ejemplos de nuestra experiencia y compromiso con la excelencia en ingeniería
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Proyecto 1: Instalaciones Comerciales -->
+      <div class="group bg-white dark:bg-slate-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center overflow-hidden">
+          <Building className="w-24 h-24 text-white/20 absolute" />
+          <div class="relative z-10 text-center text-white">
+            <Building className="w-16 h-16 mx-auto mb-2" />
+            <span class="text-sm font-medium">Instalaciones Comerciales</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+            Centro Comercial Plaza Norte
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4">
+            Proyecto integral de instalaciones eléctricas, climatización y seguridad para
+            un centro comercial de 15,000 m².
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-xs font-medium bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-full">
+              Instalaciones
+            </span>
+            <span class="px-3 py-1 text-xs font-medium bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-full">
+              Comercial
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2: Infraestructura Vial -->
+      <div class="group bg-white dark:bg-slate-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="relative h-48 bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center overflow-hidden">
+          <Route className="w-24 h-24 text-white/20 absolute" />
+          <div class="relative z-10 text-center text-white">
+            <Route className="w-16 h-16 mx-auto mb-2" />
+            <span class="text-sm font-medium">Infraestructuras</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+            Autopista del Norte - Tramo 3
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4">
+            Diseño y supervisión de proyecto de infraestructura vial con 8 km de extensión,
+            incluyendo drenaje y señalización.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full">
+              Infraestructura
+            </span>
+            <span class="px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full">
+              Vial
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3: Complejo Residencial -->
+      <div class="group bg-white dark:bg-slate-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="relative h-48 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center overflow-hidden">
+          <Home className="w-24 h-24 text-white/20 absolute" />
+          <div class="relative z-10 text-center text-white">
+            <Home className="w-16 h-16 mx-auto mb-2" />
+            <span class="text-sm font-medium">Residencial</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+            Residencial Las Colinas
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4">
+            Proyecto de actividades y licencias para complejo residencial de 120 viviendas
+            con zonas comunes y servicios.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full">
+              Actividades
+            </span>
+            <span class="px-3 py-1 text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full">
+              Residencial
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4: Industrial -->
+      <div class="group bg-white dark:bg-slate-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="relative h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center overflow-hidden">
+          <Building className="w-24 h-24 text-white/20 absolute" />
+          <div class="relative z-10 text-center text-white">
+            <Building className="w-16 h-16 mx-auto mb-2" />
+            <span class="text-sm font-medium">Industrial</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+            Planta de Producción TechCorp
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4">
+            Instalaciones eléctricas e industriales para planta de producción tecnológica
+            de 5,000 m² con alta demanda energética.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full">
+              Industrial
+            </span>
+            <span class="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full">
+              Instalaciones
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 5: Edificio Corporativo -->
+      <div class="group bg-white dark:bg-slate-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="relative h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center overflow-hidden">
+          <Building className="w-24 h-24 text-white/20 absolute" />
+          <div class="relative z-10 text-center text-white">
+            <Building className="w-16 h-16 mx-auto mb-2" />
+            <span class="text-sm font-medium">Corporativo</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+            Torre Empresarial Sigma
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4">
+            Instalaciones integrales para edificio corporativo de 12 plantas con
+            sistemas de domótica y eficiencia energética.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full">
+              Corporativo
+            </span>
+            <span class="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full">
+              Domótica
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 6: Urbanización -->
+      <div class="group bg-white dark:bg-slate-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800">
+        <div class="relative h-48 bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center overflow-hidden">
+          <Route className="w-24 h-24 text-white/20 absolute" />
+          <div class="relative z-10 text-center text-white">
+            <Route className="w-16 h-16 mx-auto mb-2" />
+            <span class="text-sm font-medium">Urbanización</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+            Urbanización El Bosque
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4">
+            Proyecto completo de urbanización con red de agua, electricidad, alcantarillado
+            y pavimentación para 200 parcelas.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-xs font-medium bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 rounded-full">
+              Urbanización
+            </span>
+            <span class="px-3 py-1 text-xs font-medium bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 rounded-full">
+              Infraestructura
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+        ¿Tienes un proyecto en mente? Estamos listos para ayudarte a hacerlo realidad
+      </p>
+      <Button asChild size="lg" client:load>
+        <a href="/contacto" class="inline-flex items-center gap-2">
+          Contáctanos
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      </Button>
+    </div>
+  </div>
+</section>

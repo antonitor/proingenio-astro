@@ -122,19 +122,19 @@ const defaultNavigationLinks: Navbar02NavItem[] = [
     type: "description",
     items: [
       {
-        href: "#nosotros",
+        href: "/#quienes-somos",
         label: "Quienes somos",
         description:
           "Oficina técnica especializada en proyectos y servicios de ingeniería.",
       },
       {
-        href: "#proyectos",
+        href: "/#proyectos",
         label: "Proyectos destacados",
         description:
           "Algunos de nuestros trabajos más representativos y recientes.",
       },
       {
-        href: "#contacto",
+        href: "/contacto",
         label: "Contacto",
         description: "Solicita información o presupuesto sin compromiso.",
       },
@@ -146,26 +146,26 @@ const defaultNavigationLinks: Navbar02NavItem[] = [
     type: "description",
     items: [
       {
-        href: "/departamentos/#proyectos-de-actividades",
+        href: "/departamentos#proyectos-actividades",
         label: "Proyectos de actividades",
         description:
           "Proyectos técnicos para apertura o reforma de negocios, cumpliendo toda la normativa.",
       },
       {
-        href: "/departamentos/#proyectos-de-instalaciones",
-        label: "Proyectos de interiores",
+        href: "/departamentos#instalaciones-interiores",
+        label: "Instalaciones interiores",
         description:
           "Diseño y legalización de instalaciones eléctricas, climatización o fontanería.",
       },
       {
-        href: "/departamentos/#proyectos-de-infraestructuras",
-        label: "Proyectos de infraestructuras",
+        href: "/departamentos#infraestructuras",
+        label: "Infraestructuras",
         description:
           "Ingeniería y supervisión de obras e infraestructuras técnicas.",
       },
       {
-        href: "/departamentos/#Asesoramiento-a-instaladores",
-        label: "Asesoramiento a instaladores",
+        href: "/departamentos#asesoramiento",
+        label: "Asesoramiento e instaladores",
         description:
           "Soporte técnico para instaladores en redacción y legalización de proyectos.",
       },

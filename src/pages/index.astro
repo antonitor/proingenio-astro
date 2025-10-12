@@ -1,10 +1,8 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import ModeToggle from "@/components/ModeToggle";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from "../components/Hero.astro";
+import QuienesSomos from "../components/QuienesSomos.astro";
+import ProyectosDestacados from "../components/ProyectosDestacados.astro";
 ---
 
 <script is:inline>
@@ -32,5 +30,7 @@ import ModeToggle from "@/components/ModeToggle";
 </script>
 
 <Layout>
-  <Welcome />
+  <Hero />
+  <QuienesSomos />
+  <ProyectosDestacados />
 </Layout>

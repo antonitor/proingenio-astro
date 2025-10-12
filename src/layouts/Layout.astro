@@ -1,21 +1,25 @@
 ---
-import MainMenu from "@/components/MainMenu";
-import "../styles/global.css";
 import { Navbar02 } from "@/components/ui/shadcn-io/navbar-02";
+import Footer from "@/components/Footer.astro";
+import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta name="description" content="Proingenio - Ingeniería de calidad para proyectos excepcionales. Especialistas en proyectos de actividades, instalaciones interiores e infraestructuras." />
+    <title>Proingenio - Ingeniería de Calidad</title>
   </head>
-  <body>
-    <Navbar02 client:load/>
-    <slot />
+  <body class="bg-white dark:bg-slate-950">
+    <Navbar02 client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
@@ -24,6 +28,6 @@ import { Navbar02 } from "@/components/ui/shadcn-io/navbar-02";
   body {
     margin: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
   }
 </style>

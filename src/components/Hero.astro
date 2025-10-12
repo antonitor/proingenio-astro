@@ -1,0 +1,127 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<section class="relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-20 md:py-32 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Contenido de texto -->
+      <div class="space-y-6 z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+          Proingenio
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-300">
+          Ingeniería de calidad para proyectos excepcionales
+        </p>
+        <p class="text-lg text-slate-500 dark:text-slate-400">
+          Especialistas en proyectos de actividades, instalaciones interiores e infraestructuras. Comprometidos con la excelencia y la innovación.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <Button asChild size="lg" client:load>
+            <a href="#quienes-somos">Conócenos</a>
+          </Button>
+          <Button asChild variant="outline" size="lg" client:load>
+            <a href="#proyectos">Ver proyectos</a>
+          </Button>
+        </div>
+      </div>
+
+      <!-- Silueta de ingeniero -->
+      <div class="relative h-[400px] md:h-[500px] flex items-center justify-center">
+        <svg
+          viewBox="0 0 400 500"
+          class="w-full h-full drop-shadow-2xl"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Ingeniero con carpeta -->
+          <g class="animate-float">
+            <!-- Cabeza -->
+            <ellipse cx="200" cy="80" rx="45" ry="50" fill="currentColor" class="text-slate-700 dark:text-slate-300" />
+
+            <!-- Casco -->
+            <path
+              d="M 150 75 Q 150 50 200 50 Q 250 50 250 75 L 240 80 Q 240 60 200 60 Q 160 60 160 80 Z"
+              fill="currentColor"
+              class="text-indigo-600"
+            />
+
+            <!-- Cuerpo -->
+            <rect x="160" y="130" width="80" height="120" rx="10" fill="currentColor" class="text-slate-600 dark:text-slate-400" />
+
+            <!-- Brazo izquierdo -->
+            <path
+              d="M 160 150 L 120 180 L 125 190 L 165 160"
+              fill="currentColor"
+              class="text-slate-600 dark:text-slate-400"
+            />
+
+            <!-- Brazo derecho sosteniendo carpeta -->
+            <path
+              d="M 240 150 L 280 200 L 275 210 L 235 160"
+              fill="currentColor"
+              class="text-slate-600 dark:text-slate-400"
+            />
+
+            <!-- Carpeta/portapapeles -->
+            <g transform="translate(260, 180)">
+              <rect x="0" y="0" width="70" height="90" rx="3" fill="currentColor" class="text-indigo-700" />
+              <rect x="10" y="10" width="50" height="70" rx="2" fill="white" />
+              <line x1="15" y1="20" x2="55" y2="20" stroke="currentColor" stroke-width="2" class="text-slate-400" />
+              <line x1="15" y1="30" x2="55" y2="30" stroke="currentColor" stroke-width="2" class="text-slate-400" />
+              <line x1="15" y1="40" x2="45" y2="40" stroke="currentColor" stroke-width="2" class="text-slate-400" />
+              <line x1="15" y1="50" x2="50" y2="50" stroke="currentColor" stroke-width="2" class="text-slate-400" />
+              <line x1="15" y1="60" x2="40" y2="60" stroke="currentColor" stroke-width="2" class="text-slate-400" />
+              <!-- Clip superior -->
+              <rect x="25" y="-5" width="20" height="8" rx="2" fill="currentColor" class="text-slate-500" />
+            </g>
+
+            <!-- Pierna izquierda -->
+            <rect x="170" y="250" width="25" height="100" rx="5" fill="currentColor" class="text-slate-700 dark:text-slate-500" />
+
+            <!-- Pierna derecha -->
+            <rect x="205" y="250" width="25" height="100" rx="5" fill="currentColor" class="text-slate-700 dark:text-slate-500" />
+
+            <!-- Zapatos -->
+            <ellipse cx="182" cy="355" rx="20" ry="8" fill="currentColor" class="text-slate-900 dark:text-slate-600" />
+            <ellipse cx="217" cy="355" rx="20" ry="8" fill="currentColor" class="text-slate-900 dark:text-slate-600" />
+          </g>
+
+          <!-- Elementos decorativos -->
+          <g class="opacity-20">
+            <circle cx="80" cy="100" r="4" fill="currentColor" class="text-indigo-500" />
+            <circle cx="350" cy="150" r="6" fill="currentColor" class="text-indigo-500" />
+            <circle cx="320" cy="80" r="3" fill="currentColor" class="text-indigo-500" />
+            <circle cx="100" cy="300" r="5" fill="currentColor" class="text-indigo-500" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onda decorativa en la parte inferior -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path
+        d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+        fill="white"
+        class="dark:fill-slate-950"
+      />
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

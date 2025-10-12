@@ -50,7 +50,7 @@ const MainMenu = () => {
           <NavigationMenuList className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-2 w-full">
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="/quienes-somos"
+                href="/#quienes-somos"
                 className="w-full md:w-auto px-4 py-2"
               >
                 Quienes somos
@@ -64,32 +64,32 @@ const MainMenu = () => {
                 <ul className="p-2 min-w-[220px]">
                   <li>
                     <NavigationMenuLink
-                      href="/departamentos/proyectos-actividades"
-                      className="block px-3 py-2 hover:bg-gray-100 rounded"
+                      href="/departamentos#proyectos-actividades"
+                      className="block px-3 py-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded"
                     >
                       Proyectos de actividades
                     </NavigationMenuLink>
                   </li>
                   <li>
                     <NavigationMenuLink
-                      href="/departamentos/proyectos-instalaciones-interiores"
-                      className="block px-3 py-2 hover:bg-gray-100 rounded"
+                      href="/departamentos#instalaciones-interiores"
+                      className="block px-3 py-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded"
                     >
-                      Proyectos de instalaciones interiores
+                      Instalaciones interiores
                     </NavigationMenuLink>
                   </li>
                   <li>
                     <NavigationMenuLink
-                      href="/departamentos/proyectos-infraestructuras"
-                      className="block px-3 py-2 hover:bg-gray-100 rounded"
+                      href="/departamentos#infraestructuras"
+                      className="block px-3 py-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded"
                     >
-                      Proyectos de Infraestructuras
+                      Infraestructuras
                     </NavigationMenuLink>
                   </li>
                   <li>
                     <NavigationMenuLink
-                      href="/departamentos/asesoramiento-instaladores"
-                      className="block px-3 py-2 hover:bg-gray-100 rounded"
+                      href="/departamentos#asesoramiento"
+                      className="block px-3 py-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded"
                     >
                       Asesoramiento e instaladores
                     </NavigationMenuLink>
@@ -99,7 +99,7 @@ const MainMenu = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="/proyectos-destacados"
+                href="/#proyectos"
                 className="w-full md:w-auto px-4 py-2"
               >
                 Proyectos destacados

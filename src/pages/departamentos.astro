@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { FileText, Lightbulb, Wrench, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout>
+  <!-- Hero section para Departamentos -->
+  <section class="bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-900 dark:to-slate-900 py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Nuestros Departamentos
+      </h1>
+      <p class="text-xl text-indigo-100 max-w-3xl mx-auto">
+        Soluciones especializadas en cada área de la ingeniería
+      </p>
+    </div>
+  </section>
+
+  <!-- Departamento 1: Proyectos de Actividades -->
+  <section id="proyectos-actividades" class="py-20 bg-white dark:bg-slate-950">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center">
+              <FileText className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+              Proyectos de Actividades
+            </h2>
+          </div>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+            Especializados en la tramitación y legalización de actividades empresariales.
+            Gestionamos todos los permisos y licencias necesarios para que tu negocio opere
+            conforme a la normativa vigente.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Licencias de apertura y actividad</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Proyectos de adecuación de locales comerciales</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Cambios de uso y modificaciones</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Asesoramiento en normativa municipal</span>
+            </li>
+          </ul>
+          <Button asChild size="lg" client:load>
+            <a href="/contacto">Consulta tu proyecto</a>
+          </Button>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="relative h-[400px] bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/30 dark:to-slate-900 rounded-2xl flex items-center justify-center border border-indigo-200 dark:border-indigo-900/30">
+            <FileText className="w-48 h-48 text-indigo-300 dark:text-indigo-800" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departamento 2: Instalaciones Interiores -->
+  <section id="instalaciones-interiores" class="py-20 bg-slate-50 dark:bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="relative h-[400px] bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/30 dark:to-slate-800 rounded-2xl flex items-center justify-center border border-emerald-200 dark:border-emerald-900/30">
+            <Lightbulb className="w-48 h-48 text-emerald-300 dark:text-emerald-800" />
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center">
+              <Lightbulb className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+              Instalaciones Interiores
+            </h2>
+          </div>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+            Diseño y ejecución de instalaciones eléctricas, climatización, fontanería y
+            telecomunicaciones para todo tipo de edificios, garantizando eficiencia,
+            seguridad y confort.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Instalaciones eléctricas de baja tensión</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Climatización y ventilación (HVAC)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Fontanería y saneamiento</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Sistemas de domótica y automatización</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Telecomunicaciones e ICT</span>
+            </li>
+          </ul>
+          <Button asChild size="lg" client:load>
+            <a href="/contacto">Solicita presupuesto</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departamento 3: Infraestructuras -->
+  <section id="infraestructuras" class="py-20 bg-white dark:bg-slate-950">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center">
+              <Wrench className="w-8 h-8 text-amber-600 dark:text-amber-400" />
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+              Infraestructuras
+            </h2>
+          </div>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+            Proyectos de infraestructura civil y urbana, desde urbanizaciones completas
+            hasta obras viales y de servicios públicos, cumpliendo con los más altos
+            estándares de calidad.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Proyectos de urbanización</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Viales, pavimentación y señalización</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Redes de agua potable y saneamiento</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Drenaje y sistemas pluviales</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Obra civil y estructuras</span>
+            </li>
+          </ul>
+          <Button asChild size="lg" client:load>
+            <a href="/contacto">Inicia tu proyecto</a>
+          </Button>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="relative h-[400px] bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/30 dark:to-slate-900 rounded-2xl flex items-center justify-center border border-amber-200 dark:border-amber-900/30">
+            <Wrench className="w-48 h-48 text-amber-300 dark:text-amber-800" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departamento 4: Asesoramiento e Instaladores -->
+  <section id="asesoramiento" class="py-20 bg-slate-50 dark:bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="relative h-[400px] bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-slate-800 rounded-2xl flex items-center justify-center border border-blue-200 dark:border-blue-900/30">
+            <Users className="w-48 h-48 text-blue-300 dark:text-blue-800" />
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+              <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+              Asesoramiento e Instaladores
+            </h2>
+          </div>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+            Ofrecemos asesoramiento técnico especializado y contamos con una red de
+            instaladores certificados para garantizar la correcta ejecución de todos
+            los proyectos.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Consultoría técnica en ingeniería</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Dirección y supervisión de obras</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Red de instaladores certificados</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Control de calidad y certificaciones</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              </div>
+              <span class="text-slate-700 dark:text-slate-300">Mantenimiento y postventa</span>
+            </li>
+          </ul>
+          <Button asChild size="lg" client:load>
+            <a href="/contacto">Necesito asesoramiento</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-900 dark:to-slate-900">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        ¿Necesitas ayuda con tu proyecto?
+      </h2>
+      <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+        Nuestro equipo de expertos está listo para asesorarte y convertir tu idea en realidad
+      </p>
+      <Button asChild size="lg" variant="outline" client:load>
+        <a href="/contacto" class="bg-white text-indigo-700 hover:bg-slate-50">
+          Contacta con nosotros
+        </a>
+      </Button>
+    </div>
+  </section>
+</Layout>
