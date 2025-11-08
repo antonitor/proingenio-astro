@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro-based website for Proingenio, configured with React integration, Tailwind CSS v4, and shadcn/ui components. The site is deployed to GitHub Pages at `https://antonitor.github.io/proingenio-astro/`.
+This is an Astro-based website for Proingenio, configured with React integration, Tailwind CSS v4, and shadcn/ui components. The site is deployed to Netlify.
 
 ## Development Commands
 
@@ -80,12 +80,26 @@ import { cn } from "@/lib/utils";
 
 ## Deployment
 
-The site deploys automatically to GitHub Pages via `.github/workflows/astro.yml`:
-- Triggers on push to `main` branch
-- Builds with base path `/proingenio-astro/`
-- Site URL configured in astro.config.mjs:13-14
+The site is deployed to Netlify with the following configuration:
+- **Configuration file**: `netlify.toml` in project root
+- **Build command**: `npm run build`
+- **Publish directory**: `dist`
+- **Continuous deployment**: Connect your repository to Netlify for automatic deployments on push to `main`
 
-**Important**: When adding new routes or assets, ensure they work with the base path `/proingenio-astro/`.
+### Deploying to Netlify
+
+1. **First-time setup**:
+   - Sign up/login to [Netlify](https://netlify.com)
+   - Click "Add new site" → "Import an existing project"
+   - Connect your Git provider and select this repository
+   - Netlify will auto-detect the settings from `netlify.toml`
+   - Click "Deploy site"
+
+2. **Subsequent deployments**:
+   - Push to the `main` branch
+   - Netlify will automatically build and deploy
+
+The project uses clean root-level routes (no subdirectory path), making navigation simpler than GitHub Pages deployment.
 
 ## Adding shadcn/ui Components
 

@@ -10,7 +10,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://antonitor.github.io',
-  base: '/proingenio-astro/',
   integrations: [react()]
 });

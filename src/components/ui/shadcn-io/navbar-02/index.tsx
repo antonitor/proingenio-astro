@@ -146,7 +146,7 @@ const defaultNavigationLinks: Navbar02NavItem[] = [
     type: "description",
     items: [
       {
-        href: "/departamentos#proyectos-actividades",
+        href: "/proingenio-astro/departamentos#proyectos-actividades",
         label: "Proyectos de actividades",
         description:
           "Proyectos técnicos para apertura o reforma de negocios, cumpliendo toda la normativa.",
