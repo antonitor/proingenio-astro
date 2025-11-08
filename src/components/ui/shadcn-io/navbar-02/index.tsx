@@ -134,7 +134,7 @@ const defaultNavigationLinks: Navbar02NavItem[] = [
           "Algunos de nuestros trabajos más representativos y recientes.",
       },
       {
-        href: "/contacto",
+        href: "/#contacto",
         label: "Contacto",
         description: "Solicita información o presupuesto sin compromiso.",
       },
@@ -146,7 +146,7 @@ const defaultNavigationLinks: Navbar02NavItem[] = [
     type: "description",
     items: [
       {
-        href: "/proingenio-astro/departamentos#proyectos-actividades",
+        href: "/departamentos#proyectos-actividades",
         label: "Proyectos de actividades",
         description:
           "Proyectos técnicos para apertura o reforma de negocios, cumpliendo toda la normativa.",
@@ -178,7 +178,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
     {
       className,
       logo = <Logo />,
-      logoHref = "#",
+      logoHref = "/",
       navigationLinks = defaultNavigationLinks,
       signInText = "Sign In",
       signInHref = "#signin",
@@ -294,23 +294,23 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                               <ul>
                                 {link.items?.map((item, itemIndex) => (
                                   <li key={itemIndex}>
-                                    <button
-                                      onClick={(e) => e.preventDefault()}
+                                    <a
+                                      href={item.href}
                                       className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
                                     >
                                       {item.label}
-                                    </button>
+                                    </a>
                                   </li>
                                 ))}
                               </ul>
                             </>
                           ) : (
-                            <button
-                              onClick={(e) => e.preventDefault()}
+                            <a
+                              href={link.href}
                               className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
                             >
                               {link.label}
-                            </button>
+                            </a>
                           )}
                           {/* Add separator between different types of items */}
                           {index < navigationLinks.length - 1 &&
@@ -337,8 +337,8 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
             )}
             {/* Main nav */}
             <div className="flex items-center gap-6">
-              <button
-                onClick={(e) => e.preventDefault()}
+              <a
+                href={logoHref}
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
                 <div className="text-2xl">{logo}</div>
@@ -346,7 +346,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                 <span className="hidden font-bold text-xl sm:inline-block">
                   PROINGENIO
                 </span>
-              </button>
+              </a>
               {/* Navigation menu */}
               {!isMobile && (
                 <NavigationMenu className="flex">
@@ -378,8 +378,8 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                                 <div className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                   <div className="row-span-3">
                                     <NavigationMenuLink asChild>
-                                      <button
-                                        onClick={(e) => e.preventDefault()}
+                                      <a
+                                        href="/"
                                         className="flex h-full w-full select-none flex-col justify-center items-center text-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md cursor-pointer"
                                       >
                                         <div className="mb-3 text-xl font-medium">
@@ -390,7 +390,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                                           proyectos de ingeniería, licencias y
                                           legalizaciones.
                                         </p>
-                                      </button>
+                                      </a>
                                     </NavigationMenuLink>
                                   </div>
                                   {link.items?.map((item, itemIndex) => (
@@ -448,15 +448,16 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                             </NavigationMenuContent>
                           </>
                         ) : (
-                          <NavigationMenuLink
-                            href={link.href}
-                            className={cn(
-                              navigationMenuTriggerStyle(),
-                              "cursor-pointer"
-                            )}
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            {link.label}
+                          <NavigationMenuLink asChild>
+                            <a
+                              href={link.href}
+                              className={cn(
+                                navigationMenuTriggerStyle(),
+                                "cursor-pointer"
+                              )}
+                            >
+                              {link.label}
+                            </a>
                           </NavigationMenuLink>
                         )}
                       </NavigationMenuItem>
@@ -507,7 +508,6 @@ const ListItem = React.forwardRef<
     <NavigationMenuLink asChild>
       <a
         ref={ref}
-        onClick={(e) => e.preventDefault()}
         className={cn(
           "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer",
           className

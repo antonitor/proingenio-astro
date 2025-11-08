@@ -1,0 +1,163 @@
+---
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+---
+
+<section id="contacto" class="py-20 bg-slate-50 dark:bg-slate-900">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Encabezado -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          Contacta con Nosotros
+        </h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">
+          ¿Tienes un proyecto en mente? Estamos aquí para ayudarte.
+          Solicita información o presupuesto sin compromiso.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Información de contacto -->
+        <div class="space-y-6">
+          <div class="bg-white dark:bg-slate-950 p-6 rounded-lg border border-slate-200 dark:border-slate-800">
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">
+              Información de Contacto
+            </h3>
+
+            <div class="space-y-4">
+              <!-- Email -->
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Email</p>
+                  <a href="mailto:info@proingenio.com" class="text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    info@proingenio.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Teléfono</p>
+                  <a href="tel:+34123456789" class="text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    +34 123 456 789
+                  </a>
+                </div>
+              </div>
+
+              <!-- Dirección -->
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Dirección</p>
+                  <p class="text-slate-900 dark:text-white">
+                    Calle Ejemplo, 123<br />
+                    28001 Madrid, España
+                  </p>
+                </div>
+              </div>
+
+              <!-- Horario -->
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Horario</p>
+                  <p class="text-slate-900 dark:text-white">
+                    Lunes a Viernes: 9:00 - 18:00<br />
+                    Sábados: 10:00 - 14:00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="bg-white dark:bg-slate-950 p-6 rounded-lg border border-slate-200 dark:border-slate-800">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">
+            Envíanos un Mensaje
+          </h3>
+
+          <form class="space-y-4">
+            <!-- Nombre -->
+            <div>
+              <label for="nombre" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                Nombre completo
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                placeholder="Tu nombre"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                placeholder="tu@email.com"
+              />
+            </div>
+
+            <!-- Teléfono -->
+            <div>
+              <label for="telefono" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                Teléfono (opcional)
+              </label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                placeholder="+34 123 456 789"
+              />
+            </div>
+
+            <!-- Mensaje -->
+            <div>
+              <label for="mensaje" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                Mensaje
+              </label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                required
+                rows="4"
+                class="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all resize-none"
+                placeholder="Cuéntanos sobre tu proyecto..."
+              ></textarea>
+            </div>
+
+            <!-- Botón de envío -->
+            <button
+              type="submit"
+              class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
+            >
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
