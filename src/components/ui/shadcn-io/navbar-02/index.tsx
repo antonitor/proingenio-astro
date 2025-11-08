@@ -22,36 +22,39 @@ import { cn } from "@/lib/utils";
 import type { ComponentProps } from "react";
 import ModeToggle from "@/components/ModeToggle";
 
+// Import logo images
+import logoLight from "@/assets/PROINGENIO.png";
+import logoDark from "@/assets/PROINGENIO-INVERT.png";
+
 // Simple logo component for the navbar
-const Logo = (props: React.SVGAttributes<SVGElement>) => {
+const Logo = (props: React.HTMLAttributes<HTMLImageElement>) => {
+  const [isDark, setIsDark] = React.useState(false);
+
+  React.useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+
+    checkTheme();
+
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <svg
-      width="1em"
-      height="1em"
-      viewBox="0 0 324 323"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src={isDark ? logoDark.src : logoLight.src}
+      alt="Proingenio Logo"
+      className="h-10 w-auto"
       {...props}
-    >
-      <rect
-        x="88.1023"
-        y="144.792"
-        width="151.802"
-        height="36.5788"
-        rx="18.2894"
-        transform="rotate(-38.5799 88.1023 144.792)"
-        fill="currentColor"
-      />
-      <rect
-        x="85.3459"
-        y="244.537"
-        width="151.802"
-        height="36.5788"
-        rx="18.2894"
-        transform="rotate(-38.5799 85.3459 244.537)"
-        fill="currentColor"
-      />
-    </svg>
+    />
   );
 };
 
@@ -339,13 +342,9 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
             <div className="flex items-center gap-6">
               <a
                 href={logoHref}
-                className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
+                className="flex items-center text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
-                <div className="text-2xl">{logo}</div>
-
-                <span className="hidden font-bold text-xl sm:inline-block">
-                  PROINGENIO
-                </span>
+                {logo}
               </a>
               {/* Navigation menu */}
               {!isMobile && (

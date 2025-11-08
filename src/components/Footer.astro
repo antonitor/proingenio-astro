@@ -1,5 +1,6 @@
 ---
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logoProingenio from "@/assets/PROINGENIO-INVERT.png";
 ---
 
 <footer class="bg-slate-900 dark:bg-slate-950 text-slate-300 border-t border-slate-800">
@@ -8,36 +9,12 @@ import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
       <!-- Columna 1: Información de la empresa -->
       <div class="space-y-4">
         <div class="flex items-center gap-2">
-          <img src="/favicon.svg" alt="Proingenio Logo" class="h-8 w-8" />
-          <h3 class="text-xl font-bold text-white">Proingenio</h3>
+          <img src={logoProingenio.src} alt="Proingenio Logo" class="h-12 w-auto" />
         </div>
         <p class="text-sm text-slate-400">
-          Ingeniería de calidad para proyectos excepcionales. Especialistas en actividades,
-          instalaciones e infraestructuras.
+          Proyectos y servicios técnicos de ingeniería. Especialistas en ingeniería de proyectos
+          eléctricos y fotovoltaica en alta tensión.
         </p>
-        <div class="flex gap-4 pt-2">
-          <a
-            href="#"
-            class="w-10 h-10 rounded-full bg-slate-800 hover:bg-indigo-600 flex items-center justify-center transition-colors"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            class="w-10 h-10 rounded-full bg-slate-800 hover:bg-indigo-600 flex items-center justify-center transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            class="w-10 h-10 rounded-full bg-slate-800 hover:bg-indigo-600 flex items-center justify-center transition-colors"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-5 h-5" />
-          </a>
-        </div>
       </div>
 
       <!-- Columna 2: Enlaces rápidos -->
@@ -133,22 +110,25 @@ import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
           <li class="flex items-start gap-3 text-sm">
             <Mail className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
             <div>
-              <p class="text-slate-400">info@proingenio.com</p>
-              <p class="text-slate-400">contacto@proingenio.com</p>
+              <a href="mailto:luis@proingenio.es" class="text-slate-400 hover:text-indigo-400 transition-colors">luis@proingenio.es</a><br />
+              <a href="mailto:fran@proingenio.es" class="text-slate-400 hover:text-indigo-400 transition-colors">fran@proingenio.es</a>
             </div>
           </li>
           <li class="flex items-start gap-3 text-sm">
             <Phone className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
             <div>
-              <p class="text-slate-400">+34 900 123 456</p>
-              <p class="text-slate-400">+34 900 123 457</p>
+              <p class="text-slate-400">Oficina: <a href="tel:+34639953158" class="hover:text-indigo-400 transition-colors">639 95 31 58</a></p>
+              <p class="text-slate-400">Luis: <a href="tel:+34649580069" class="hover:text-indigo-400 transition-colors">649 58 00 69</a></p>
+              <p class="text-slate-400">Fran: <a href="tel:+34608290548" class="hover:text-indigo-400 transition-colors">608 29 05 48</a></p>
             </div>
           </li>
           <li class="flex items-start gap-3 text-sm">
             <MapPin className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
             <p class="text-slate-400">
-              Calle Ejemplo 123<br />
-              28000 Madrid, España
+              C/ César Puget Riquer, 29<br />
+              Escalera C - Loc 8<br />
+              07840 Santa Eulalia del Río<br />
+              Ibiza, España
             </p>
           </li>
         </ul>

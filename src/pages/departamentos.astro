@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import { FileText, Lightbulb, Wrench, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import departamentosProyectos from "@/assets/departamentos-proyectos.jpg";
+import instalacionesInteriores from "@/assets/instalaciones-interiores.jpg";
+import departamentosInfraestructuras from "@/assets/departamentos-infraestructuras.jpg";
+import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg";
 ---
 
 <Layout>
@@ -66,8 +70,12 @@ import { Button } from "@/components/ui/button";
           </Button>
         </div>
         <div class="order-1 md:order-2">
-          <div class="relative h-[400px] bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950/30 dark:to-slate-900 rounded-2xl flex items-center justify-center border border-indigo-200 dark:border-indigo-900/30">
-            <FileText className="w-48 h-48 text-indigo-300 dark:text-indigo-800" />
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-indigo-200 dark:border-indigo-900/30">
+            <img
+              src={departamentosProyectos.src}
+              alt="Proyectos de Actividades"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -79,8 +87,12 @@ import { Button } from "@/components/ui/button";
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="relative h-[400px] bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/30 dark:to-slate-800 rounded-2xl flex items-center justify-center border border-emerald-200 dark:border-emerald-900/30">
-            <Lightbulb className="w-48 h-48 text-emerald-300 dark:text-emerald-800" />
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-emerald-200 dark:border-emerald-900/30">
+            <img
+              src={instalacionesInteriores.src}
+              alt="Instalaciones Interiores"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
         <div>
@@ -192,8 +204,12 @@ import { Button } from "@/components/ui/button";
           </Button>
         </div>
         <div class="order-1 md:order-2">
-          <div class="relative h-[400px] bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/30 dark:to-slate-900 rounded-2xl flex items-center justify-center border border-amber-200 dark:border-amber-900/30">
-            <Wrench className="w-48 h-48 text-amber-300 dark:text-amber-800" />
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-amber-200 dark:border-amber-900/30">
+            <img
+              src={departamentosInfraestructuras.src}
+              alt="Infraestructuras"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -205,8 +221,12 @@ import { Button } from "@/components/ui/button";
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="relative h-[400px] bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-slate-800 rounded-2xl flex items-center justify-center border border-blue-200 dark:border-blue-900/30">
-            <Users className="w-48 h-48 text-blue-300 dark:text-blue-800" />
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-blue-200 dark:border-blue-900/30">
+            <img
+              src={departamentosAsesoramiento.src}
+              alt="Asesoramiento e Instaladores"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
         <div>

@@ -1,17 +1,44 @@
 ---
-import { Building2, Users, Award, Target } from "lucide-react";
+import { Building2, Users, Award, Target, MapPin } from "lucide-react";
+import equipoFoto from "@/assets/equipo-fran-luis.jpg";
 ---
 
 <section id="quienes-somos" class="py-20 bg-white dark:bg-slate-950">
   <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-        Quiénes Somos
-      </h2>
-      <p class="text-lg text-slate-600 dark:text-slate-400">
-        Somos un equipo de profesionales comprometidos con la excelencia en ingeniería,
-        ofreciendo soluciones integrales para cada tipo de proyecto.
-      </p>
+    <!-- Presentación de Fran y Luis -->
+    <div class="max-w-5xl mx-auto mb-16">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+            Nuestro equipo
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-4">
+            En PROINGENIO trabajamos uniendo experiencia, conocimiento técnico e innovación para ofrecer
+            soluciones de ingeniería adaptadas a cada proyecto.
+          </p>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-4">
+            Somos un equipo multidisciplinar que comparte una misma visión: diseñar, coordinar y ejecutar
+            proyectos con eficiencia, seguridad y compromiso con la calidad.
+          </p>
+          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+            Desde nuestra oficina en <span class="font-semibold text-slate-900 dark:text-white">Santa Eulalia del Río, Ibiza</span>,
+            acompañamos a nuestros clientes en cada fase, aportando cercanía y rigor profesional.
+          </p>
+          <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
+            <MapPin className="w-5 h-5" />
+            <span class="font-medium">Santa Eulalia, Ibiza</span>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border-4 border-indigo-100 dark:border-indigo-900/30 shadow-xl">
+            <img
+              src={equipoFoto.src}
+              alt="Fran y Luis - Fundadores de PROINGENIO"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -21,10 +48,10 @@ import { Building2, Users, Award, Target } from "lucide-react";
           <Building2 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
         </div>
         <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-          Experiencia
+          +10 Años de Experiencia
         </h3>
         <p class="text-slate-600 dark:text-slate-400">
-          Años de trayectoria desarrollando proyectos de ingeniería de alta calidad en diversos sectores.
+          Más de una década desarrollando proyectos de ingeniería de alta calidad en Ibiza y Baleares.
         </p>
       </div>
 
@@ -68,21 +95,4 @@ import { Building2, Users, Award, Target } from "lucide-react";
       </div>
     </div>
 
-    <!-- Descripción adicional -->
-    <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-indigo-50 to-slate-50 dark:from-indigo-950/30 dark:to-slate-900 p-8 rounded-xl border border-indigo-100 dark:border-indigo-900/30">
-      <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-        Nuestra Misión
-      </h3>
-      <p class="text-slate-600 dark:text-slate-400 mb-4">
-        Proporcionar servicios de ingeniería de la más alta calidad, combinando conocimiento técnico,
-        innovación y compromiso con el cliente. Nos especializamos en proyectos de actividades,
-        instalaciones interiores e infraestructuras, ofreciendo soluciones personalizadas que
-        se adaptan a las necesidades específicas de cada cliente.
-      </p>
-      <p class="text-slate-600 dark:text-slate-400">
-        Nuestro equipo multidisciplinario trabaja con las últimas tecnologías y metodologías
-        para garantizar resultados excepcionales, respetando plazos, presupuestos y normativas vigentes.
-      </p>
-    </div>
-  </div>
 </section>
