@@ -1,5 +1,4 @@
 ---
-import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.png";
 ---
 
@@ -27,12 +26,18 @@ import heroBackground from "@/assets/hero-background.png";
           Especialistas en proyectos de actividades, instalaciones interiores e infraestructuras. Comprometidos con la excelencia y la innovación.
         </p>
         <div class="flex flex-wrap gap-4 pt-4 justify-center opacity-0" style="animation: text-reveal 0.8s ease-out 0.8s forwards;">
-          <Button asChild size="lg" client:load className="hover:scale-105 transition-transform duration-200">
-            <a href="#quienes-somos">Conócenos</a>
-          </Button>
-          <Button asChild variant="outline" size="lg" client:load className="hover:scale-105 transition-transform duration-200">
-            <a href="#proyectos">Ver proyectos</a>
-          </Button>
+          <a
+            href="#quienes-somos"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 h-11 px-8 hover:scale-105 duration-200"
+          >
+            Conócenos
+          </a>
+          <a
+            href="#proyectos"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-slate-300 dark:border-slate-700 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 h-11 px-8 hover:scale-105 duration-200"
+          >
+            Ver proyectos
+          </a>
         </div>
       </div>
     </div>
