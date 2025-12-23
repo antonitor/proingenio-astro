@@ -8,13 +8,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import type { LucideIcon } from "lucide-react";
+import { Building, Home, Route } from "lucide-react";
 
 interface ProyectoCardProps {
   title: string;
   description: string;
   fullDescription: string;
-  icon: LucideIcon;
+  iconName: "building" | "home" | "route";
   tags: string[];
   gradient: string;
   details?: {
@@ -24,15 +24,22 @@ interface ProyectoCardProps {
   };
 }
 
+const iconMap = {
+  building: Building,
+  home: Home,
+  route: Route,
+};
+
 export function ProyectoCard({
   title,
   description,
   fullDescription,
-  icon: Icon,
+  iconName,
   tags,
   gradient,
   details,
 }: ProyectoCardProps) {
+  const Icon = iconMap[iconName];
   return (
     <Dialog>
       <DialogTrigger asChild>
