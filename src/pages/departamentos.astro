@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { FileText, Lightbulb, Wrench, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import departamentosProyectos from "@/assets/departamentos-proyectos.jpg";
 import instalacionesInteriores from "@/assets/instalaciones-interiores.jpg";
 import departamentosInfraestructuras from "@/assets/departamentos-infraestructuras.jpg";
@@ -12,10 +11,10 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
   <!-- Hero section para Departamentos -->
   <section class="bg-gradient-to-br from-slate-700 to-slate-900 dark:from-slate-800 dark:to-slate-950 py-16">
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 opacity-0" style="animation: text-reveal 0.8s ease-out 0.2s forwards;">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
         Nuestros Departamentos
       </h1>
-      <p class="text-xl text-slate-100 max-w-3xl mx-auto opacity-0" style="animation: text-reveal 0.8s ease-out 0.4s forwards;">
+      <p class="text-xl text-slate-100 max-w-3xl mx-auto">
         Soluciones especializadas en cada área de la ingeniería
       </p>
     </div>
@@ -65,9 +64,12 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
               <span class="text-slate-700 dark:text-slate-300">Asesoramiento en normativa municipal</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Consulta tu proyecto</a>
-          </Button>
+          <a
+            href="/#contacto"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 h-11 px-8"
+          >
+            Consulta tu proyecto
+          </a>
         </div>
         <div class="order-1 md:order-2">
           <div class="relative h-[400px] rounded-2xl overflow-hidden border border-indigo-200 dark:border-indigo-900/30">
@@ -141,9 +143,12 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
               <span class="text-slate-700 dark:text-slate-300">Telecomunicaciones e ICT</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Solicita presupuesto</a>
-          </Button>
+          <a
+            href="/#contacto"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 h-11 px-8"
+          >
+            Solicita presupuesto
+          </a>
         </div>
       </div>
     </div>
@@ -199,9 +204,12 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
               <span class="text-slate-700 dark:text-slate-300">Obra civil y estructuras</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Inicia tu proyecto</a>
-          </Button>
+          <a
+            href="/#contacto"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 h-11 px-8"
+          >
+            Inicia tu proyecto
+          </a>
         </div>
         <div class="order-1 md:order-2">
           <div class="relative h-[400px] rounded-2xl overflow-hidden border border-amber-200 dark:border-amber-900/30">
@@ -275,9 +283,12 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
               <span class="text-slate-700 dark:text-slate-300">Mantenimiento y postventa</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Necesito asesoramiento</a>
-          </Button>
+          <a
+            href="/#contacto"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 h-11 px-8"
+          >
+            Necesito asesoramiento
+          </a>
         </div>
       </div>
     </div>
@@ -292,11 +303,12 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
       <p class="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
         Nuestro equipo de expertos está listo para asesorarte y convertir tu idea en realidad
       </p>
-      <Button asChild size="lg" variant="outline" client:load>
-        <a href="/#contacto" class="bg-white text-slate-900 hover:bg-slate-50 dark:text-slate-900">
-          Contacta con nosotros
-        </a>
-      </Button>
+      <a
+        href="/#contacto"
+        class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white bg-white text-slate-900 hover:bg-slate-50 h-11 px-8"
+      >
+        Contacta con nosotros
+      </a>
     </div>
   </section>
 </Layout>
