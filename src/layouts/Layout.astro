@@ -1,5 +1,6 @@
 ---
 import { Navbar02 } from "@/components/ui/shadcn-io/navbar-02";
+import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/Footer.astro";
 import "../styles/global.css";
 ---
@@ -43,6 +44,7 @@ import "../styles/global.css";
       <slot />
     </main>
     <Footer />
+    <Toaster client:load richColors position="top-right" />
   </body>
 </html>
 

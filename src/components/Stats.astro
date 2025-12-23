@@ -1,0 +1,120 @@
+---
+import { Briefcase, Users, Award, TrendingUp } from "lucide-react";
+---
+
+<section class="py-20 bg-indigo-600 dark:bg-indigo-900 relative overflow-hidden">
+  <!-- Patrón decorativo de fondo -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 animate-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Números que nos respaldan
+        </h2>
+        <p class="text-xl text-indigo-100">
+          Años de experiencia traducidos en resultados excepcionales
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Stat 1: Proyectos -->
+        <div class="text-center group animate-scale animation-delay-100">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Briefcase className="w-8 h-8 text-white" />
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="150">
+            0+
+          </div>
+          <p class="text-indigo-100 text-sm md:text-base font-medium">
+            Proyectos Completados
+          </p>
+        </div>
+
+        <!-- Stat 2: Años de experiencia -->
+        <div class="text-center group animate-scale animation-delay-200">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+            <TrendingUp className="w-8 h-8 text-white" />
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="10">
+            0+
+          </div>
+          <p class="text-indigo-100 text-sm md:text-base font-medium">
+            Años de Experiencia
+          </p>
+        </div>
+
+        <!-- Stat 3: Clientes satisfechos -->
+        <div class="text-center group animate-scale animation-delay-300">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Users className="w-8 h-8 text-white" />
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="100">
+            0+
+          </div>
+          <p class="text-indigo-100 text-sm md:text-base font-medium">
+            Clientes Satisfechos
+          </p>
+        </div>
+
+        <!-- Stat 4: Tasa de éxito -->
+        <div class="text-center group animate-scale animation-delay-400">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Award className="w-8 h-8 text-white" />
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="98">
+            0%
+          </div>
+          <p class="text-indigo-100 text-sm md:text-base font-medium">
+            Tasa de Éxito
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Contador animado usando Intersection Observer
+  const animateCounters = () => {
+    const counters = document.querySelectorAll('.stat-number');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          const targetValue = parseInt(target.getAttribute('data-target') || '0');
+          const suffix = target.textContent?.includes('%') ? '%' : '+';
+          let current = 0;
+          const increment = targetValue / 50; // 50 steps
+          const duration = 2000; // 2 seconds
+          const stepTime = duration / 50;
+
+          const updateCounter = () => {
+            current += increment;
+            if (current < targetValue) {
+              target.textContent = Math.ceil(current) + suffix;
+              setTimeout(updateCounter, stepTime);
+            } else {
+              target.textContent = targetValue + suffix;
+            }
+          };
+
+          updateCounter();
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+  };
+
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateCounters);
+  } else {
+    animateCounters();
+  }
+</script>
