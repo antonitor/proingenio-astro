@@ -52,7 +52,7 @@ const Logo = (props: React.HTMLAttributes<HTMLImageElement>) => {
     <img
       src={isDark ? logoDark.src : logoLight.src}
       alt="Proingenio Logo"
-      className="h-10 w-auto"
+      className="h-10 w-auto px-2 py-1"
       {...props}
     />
   );

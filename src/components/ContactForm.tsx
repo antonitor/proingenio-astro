@@ -13,16 +13,22 @@ export function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Simular envío (aquí conectarías con tu backend o servicio como Formspree)
     try {
-      // Simulamos una llamada async
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      toast.success("¡Mensaje enviado!", {
-        description: "Nos pondremos en contacto contigo pronto.",
+      // Enviar a Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
       });
 
-      form.reset();
+      if (response.ok) {
+        toast.success("¡Mensaje enviado!", {
+          description: "Nos pondremos en contacto contigo pronto.",
+        });
+        form.reset();
+      } else {
+        throw new Error('Error en el envío');
+      }
     } catch (error) {
       toast.error("Error al enviar", {
         description: "Por favor, inténtalo de nuevo más tarde.",
@@ -33,7 +39,24 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      name="contacto"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+      className="space-y-4"
+    >
+      {/* Campo oculto para Netlify Forms */}
+      <input type="hidden" name="form-name" value="contacto" />
+
+      {/* Honeypot anti-spam (oculto para usuarios reales) */}
+      <div style={{ display: 'none' }}>
+        <label>
+          No llenar este campo: <input name="bot-field" />
+        </label>
+      </div>
+
       {/* Nombre */}
       <div>
         <label
