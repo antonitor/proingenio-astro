@@ -66,6 +66,8 @@ Handled by **Netlify Forms** (`data-netlify="true"`, form name `contacto`, honey
 
 - Legal pages contain placeholders highlighted with `<span class="pendiente">` (company name, NIF/CIF, registry data). They must be filled in by the company before launch.
 - Projects in `ProyectosDestacados.astro` are placeholder examples and must be replaced with real projects.
+- Figures in `Stats.astro` (projects, clients, success rate) are unconfirmed examples.
+- Fonts (Inter for body, Outfit for headings) are self-hosted via Fontsource; do not load Google Fonts (GDPR, and the cookies page states there are no third-party requests).
 
 ## Deployment
 
