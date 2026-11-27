@@ -32,7 +32,7 @@ Tokens and utilities live in `src/styles/global.css`:
 
 - **Colors**: `ink`, `ink-soft`, `ink-mute`, `paper` (white), `lime` (warm whitewash, alternate sections), `stone`, `line`, `line-dark`, single accent `accent` (blueprint blue taken from the logo). No gradients.
 - **Type**: Inter Tight (`font-display`, headings), Inter (body), IBM Plex Mono (`font-mono`, labels and numbering). Self-hosted via Fontsource; never load Google Fonts.
-- **Utilities**: `wrap` (max 1440px container), `grid-12` (4 cols mobile / 12 cols md+), `label` (mono uppercase), `display-xl/lg/md`, `lead`, `photo` (common desaturated photo treatment), `crop-marks` (plan-style corner ticks), `blueprint` (faint grid background).
+- **Utilities**: `wrap` (max 1440px container), `grid-12` (4 cols mobile / 12 cols md+), `label` (mono uppercase), `display-xl/lg/md`, `lead`, `photo` (common desaturated photo treatment), `crop-marks` (plan-style corner ticks). No background grids (the client rejected them).
 - **Components (CSS)**: `.btn` + `.btn-primary/.btn-ghost/.btn-light` (square corners), `.arrow-link` (text link with growing arrow), `.field` (underline-only form inputs).
 - **Animation**: add `data-reveal` (fade up), `data-reveal="line"` (rule draws in) or `data-reveal="image"` (curtain); optional `style="--reveal-delay: 80ms"`. Driven by the observer in `Layout.astro`; content is visible without JS and with reduced motion.
 - **Astro components**: `SectionHeader` (numbered section header: numero, etiqueta, titulo, intro, enlace), `PageHeader` (interior page header with breadcrumb + slot).
@@ -82,7 +82,7 @@ Handled by **Netlify Forms** (`data-netlify="true"`, form name `contacto`, honey
 
 - Legal pages are filled in with the company data (PROINGENIO INGENIERÍA TÉCNICA S.L., CIF B19479419, Local 6). The `.pendiente` class in `LegalPage.astro` remains available to highlight any future missing data.
 - Projects (unused) and figures in `src/data/site.ts` are placeholder content and must be replaced with real data.
-- All current photos are stock placeholders (several carry 123RF watermarks), including `equipo-fran-luis.jpg`, which is not a photo of the team.
+- All current photos are stock placeholders (several carry 123RF watermarks). `equipo-fran-luis.jpg` (stock, not the real team) is kept in assets but not used for now.
 
 ## Deployment
 

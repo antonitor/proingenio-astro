@@ -1,7 +1,7 @@
 ---
 /**
  * Cabecera de las páginas interiores: ruta tipo índice de plano, titular
- * grande y entradilla opcional sobre retícula milimetrada tenue.
+ * grande y entradilla opcional.
  */
 interface Props {
   ruta: string;
@@ -12,7 +12,7 @@ interface Props {
 const { ruta, titulo, intro } = Astro.props;
 ---
 
-<section class="blueprint relative border-b border-line bg-lime">
+<section class="relative border-b border-line bg-paper">
   <div class="wrap pb-16 pt-14 md:pb-24 md:pt-20">
     <div class="grid-12 gap-y-8">
       <p class="label col-span-4 text-ink-mute md:col-span-3" data-reveal>

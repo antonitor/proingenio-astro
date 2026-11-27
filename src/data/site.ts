@@ -75,7 +75,7 @@ export const departamentos: Departamento[] = [
     tituloCorto: "Infraestructuras",
     resumen: "Redes de baja y media tensión, urbanización y acometidas.",
     descripcion:
-      "Proyectamos las redes e infraestructuras que dan servicio a parcelas, edificios y urbanizaciones, así como las acometidas que conectan cada instalación con las redes de suministro.",
+      "Proyectamos las redes e infraestructuras que dan servicio a parcelas, edificios y urbanizaciones, así como las acometidas de cada instalación.",
     servicios: [
       "Redes de baja tensión",
       "Redes de media tensión",
@@ -92,11 +92,11 @@ export const departamentos: Departamento[] = [
     tituloCorto: "Actividades",
     resumen: "Proyectos de actividad para adecuar locales al uso previsto.",
     descripcion:
-      "Redactamos el proyecto de actividad necesario para adecuar un local al uso deseado y justificamos el cumplimiento de la normativa que le es de aplicación.",
+      "Redactamos el proyecto de actividad necesario para adecuar un local al uso deseado, con la justificación del cumplimiento de la normativa municipal y sectorial.",
     servicios: [
       "Proyectos de actividad",
       "Adecuación de locales al uso previsto",
-      "Justificación de la normativa aplicable",
+      "Justificación de la normativa municipal y sectorial",
     ],
     imagen: imgActividades,
     alt: "Planos y documentación técnica sobre una mesa de trabajo",
@@ -108,7 +108,7 @@ export const departamentos: Departamento[] = [
     tituloCorto: "Asesoramiento a instaladores",
     resumen: "Consultoría técnica, dirección de obra y gestiones para instaladores.",
     descripcion:
-      "Damos soporte técnico a las empresas instaladoras: resolvemos sus consultas, asumimos la dirección de obra y nos ocupamos de las gestiones que requiere cada instalación.",
+      "Damos soporte técnico a las empresas instaladoras: resolvemos sus consultas y nos ocupamos de las gestiones que requiere cada instalación.",
     servicios: ["Consultoría técnica", "Dirección de obra", "Gestiones para instaladores"],
     imagen: imgAsesoramiento,
     alt: "Dos técnicos revisando una instalación en obra",

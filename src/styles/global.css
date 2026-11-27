@@ -170,14 +170,6 @@
   }
 }
 
-/* Retícula de fondo tipo papel milimetrado, muy tenue */
-@utility blueprint {
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--color-ink) 6%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 6%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
 @layer components {
   /* Botones: rectos, sólidos, sin degradados */
   .btn {

@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
 import SectionHeader from "@/components/SectionHeader.astro";
-import imgEquipo from "@/assets/equipo-fran-luis.jpg";
 import { cifras } from "@/data/site";
 
 const principios = [
@@ -15,7 +13,7 @@ const principios = [
   },
   {
     titulo: "Rigor técnico",
-    texto: "Cálculo, documentación y cumplimiento del CTE, REBT, RITE y la normativa sectorial que aplique.",
+    texto: "Cálculo, documentación y cumplimiento del CTE, REBT, RITE y la normativa sectorial de aplicación.",
   },
   {
     titulo: "Ejecución acompañada",
@@ -43,23 +41,6 @@ const principios = [
         acompañar al cliente en todas sus fases, desde la consulta inicial hasta la puesta en marcha.
       </p>
     </div>
-
-    <!-- Fotografía panorámica -->
-    <figure class="mt-20 md:mt-28">
-      <div class="crop-marks">
-        <div class="overflow-hidden" data-reveal="image">
-          <Image
-            src={imgEquipo}
-            widths={[640, 960, 1300]}
-            sizes="(min-width: 1440px) 1312px, 100vw"
-            quality={78}
-            alt="Equipo técnico en una nave industrial"
-            class="photo aspect-[16/10] w-full object-cover md:aspect-[1300/482]"
-          />
-        </div>
-      </div>
-      <figcaption class="label mt-5 text-ink-mute">Fig. 02 — Equipo en obra</figcaption>
-    </figure>
 
     <!-- Principios: lista numerada con líneas finas -->
     <ol class="mt-20 grid gap-x-6 md:mt-28 md:grid-cols-2 lg:grid-cols-4">
