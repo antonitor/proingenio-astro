@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import logo from "@/assets/PROINGENIO.png";
+import Logo from "@/components/Logo.astro";
 import { navegacion, departamentos, empresa } from "@/data/site";
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -10,7 +9,7 @@ const activo = (href: string) => href !== "/" && !href.includes("#") && path.sta
 <header id="cabecera" class="sticky top-0 z-50 border-b border-line bg-paper">
   <nav class="wrap flex h-[4.5rem] items-center justify-between gap-6" aria-label="Principal">
     <a href="/" class="shrink-0" aria-label="Proingenio, ir al inicio">
-      <Image src={logo} height={72} alt="Proingenio" class="h-8 w-auto md:h-9" loading="eager" />
+      <Logo variante="marca" class="h-7 w-auto sm:h-8 xl:h-9" />
     </a>
 
     <!-- Escritorio -->
@@ -50,7 +49,7 @@ const activo = (href: string) => href !== "/" && !href.includes("#") && path.sta
               </li>
             ) : (
               <li>
-                <a href={item.href} class:list={["nav-link", { "is-active": activo(item.href) }]}>
+                <a href={item.href} class:list={["nav-link inline-flex h-[4.5rem] items-center", { "is-active": activo(item.href) }]}>
                   {item.label}
                 </a>
               </li>
@@ -137,22 +136,18 @@ const activo = (href: string) => href !== "/" && !href.includes("#") && path.sta
   .nav-link.is-active {
     color: var(--color-ink);
   }
-  /* Subrayado fino que crece desde la izquierda */
+  /* Pestaña marino sobre la línea inferior de la cabecera */
   .nav-link::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -4px;
-    height: 1px;
+    bottom: -1px;
+    height: 2px;
     background: var(--color-accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 400ms var(--ease-out-quint);
-  }
-  li.group > .nav-link::after {
-    bottom: 1.4rem;
-    right: 1.1rem;
   }
   .nav-link:hover::after,
   .nav-link.is-active::after {

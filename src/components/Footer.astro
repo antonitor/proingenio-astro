@@ -1,14 +1,15 @@
 ---
+import Logo from "@/components/Logo.astro";
 import { empresa, departamentos } from "@/data/site";
 const { cta = true } = Astro.props as { cta?: boolean };
 const año = new Date().getFullYear();
 ---
 
-<footer class="bg-ink text-white">
+<footer class="bg-accent-deep text-white">
   <div class="wrap pb-10 pt-20 md:pt-28">
     <!-- Cierre editorial -->
     {cta && (
-    <div class="grid-12 gap-y-10 border-b border-line-dark pb-16 md:pb-20">
+    <div class="grid-12 gap-y-10 border-b border-white/15 pb-16 md:pb-20">
       <p class="label col-span-4 text-white/50 md:col-span-3">{empresa.descriptor}</p>
       <div class="col-span-4 md:col-span-9">
         <p class="display-lg max-w-[18ch]">¿Tienes un proyecto en Ibiza? Hablemos de los detalles.</p>
@@ -25,8 +26,8 @@ const año = new Date().getFullYear();
     <!-- Índice -->
     <div class:list={["grid-12 gap-y-12 pb-16 text-sm", cta && "pt-16"]}>
       <div class="col-span-4 md:col-span-3">
-        <p class="font-display text-2xl font-semibold tracking-tight">PROINGENIO</p>
-        <p class="label mt-3 text-white/50">{empresa.coordenadas}</p>
+        <Logo variante="completo" tono="negativo" class="w-56 max-w-full" />
+        <p class="label mt-6 text-white/50">{empresa.coordenadas}</p>
       </div>
 
       <div class="col-span-2 md:col-span-3">
@@ -75,7 +76,7 @@ const año = new Date().getFullYear();
     </div>
 
     <!-- Legal -->
-    <div class="label flex flex-col gap-4 border-t border-line-dark pt-8 text-white/50 md:flex-row md:items-center md:justify-between">
+    <div class="label flex flex-col gap-4 border-t border-white/15 pt-8 text-white/50 md:flex-row md:items-center md:justify-between">
       <p>© {año} Proingenio</p>
       <ul class="flex flex-wrap gap-x-8 gap-y-2">
         <li><a href="/aviso-legal" class="hover:text-white">Aviso legal</a></li>

@@ -30,11 +30,13 @@ npm run preview    # preview the production build
 
 Tokens and utilities live in `src/styles/global.css`:
 
-- **Colors**: `ink`, `ink-soft`, `ink-mute`, `paper` (white), `lime` (warm whitewash, alternate sections), `stone`, `line`, `line-dark`, single accent `accent` (blueprint blue taken from the logo). No gradients.
+- **Colors**: `ink`, `ink-soft`, `ink-mute`, `paper` (white), `lime` (warm whitewash, tiles and alternate sections), `stone`, `line`, `line-dark`. Brand: `accent` = corporate navy `#0a2c6b` (INGENIO in the logo), `accent-deep` (footer), `accent-bright` `#0646a5` (blue end of the logo gradient), `accent-soft` (accent text on navy), `brand-dark`. No gradients in the UI (the only gradient is the one inside the logo).
 - **Type**: Inter Tight (`font-display`, headings), Inter (body), IBM Plex Mono (`font-mono`, labels and numbering). Self-hosted via Fontsource; never load Google Fonts.
 - **Utilities**: `wrap` (max 1440px container), `grid-12` (4 cols mobile / 12 cols md+), `label` (mono uppercase), `display-xl/lg/md`, `lead`, `photo` (common desaturated photo treatment), `crop-marks` (plan-style corner ticks). No background grids (the client rejected them).
 - **Components (CSS)**: `.btn` + `.btn-primary/.btn-ghost/.btn-light` (square corners), `.arrow-link` (text link with growing arrow), `.field` (underline-only form inputs).
 - **Animation**: add `data-reveal` (fade up), `data-reveal="line"` (rule draws in) or `data-reveal="image"` (curtain); optional `style="--reveal-delay: 80ms"`. Driven by the observer in `Layout.astro`; content is visible without JS and with reduced motion.
+- **Logo**: `Logo.astro` is an exact SVG generated from the vector original `src/assets/PROINGENIO.pdf` (do not use `PROINGENIO.png`, it is kept only as a raster backup). Props: `variante` (`marca` = PRO block + INGENIO, for the header; `completo` = with "OFICINA TÉCNICA DE INGENIERÍA", only at sizes where the tagline is legible) and `tono` (`color` on light backgrounds; `negativo` on navy: white PRO block with cut-out letters).
+- **Client reference** (owner's PDF of another firm): navy blocks, logo in a navy square with an offset frame (hero seal), navy services list (home section 02), figure tiles. Its gold accent and serif headings were deliberately not adopted (not Proingenio's identity).
 - **Astro components**: `SectionHeader` (numbered section header: numero, etiqueta, titulo, intro, enlace), `PageHeader` (interior page header with breadcrumb + slot).
 - **Content data**: `src/data/site.ts` holds company info, navigation, departments, projects and figures; Navbar, Footer and pages read from it.
 

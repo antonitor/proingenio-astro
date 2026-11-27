@@ -24,8 +24,11 @@
   --color-stone: #e9e5dc;
   --color-line: #d9d5cc;
   --color-line-dark: #2c3036;
-  --color-accent: #3a44a0;
-  --color-accent-deep: #2a3279;
+  --color-accent: #0a2c6b; /* azul marino corporativo (INGENIO del logotipo) */
+  --color-accent-deep: #071f4d;
+  --color-accent-bright: #0646a5; /* extremo azul del degradado del bloque PRO */
+  --color-accent-soft: #9fb6e3; /* acento legible sobre fondo marino */
+  --color-brand-dark: #2c2f35; /* extremo oscuro del degradado del logotipo */
 
   /* Bordes: rectos o apenas redondeados */
   --radius-xs: 2px;
@@ -187,11 +190,11 @@
       border-color 250ms ease;
   }
   .btn-primary {
-    background: var(--color-ink);
+    background: var(--color-accent);
     color: white;
   }
   .btn-primary:hover {
-    background: var(--color-accent);
+    background: var(--color-ink);
   }
   .btn-ghost {
     border: 1px solid var(--color-ink);
@@ -206,7 +209,7 @@
     color: var(--color-ink);
   }
   .btn-light:hover {
-    background: var(--color-accent);
+    background: var(--color-accent-bright);
     color: white;
   }
 

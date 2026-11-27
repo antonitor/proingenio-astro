@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import heroImagen from "@/assets/proyecto.jpg";
+import Logo from "@/components/Logo.astro";
 import { empresa } from "@/data/site";
 
 const indice = [
@@ -54,6 +55,19 @@ const indice = [
             alt="Equipo técnico revisando documentación de un proyecto"
             class="photo aspect-[4/3] w-full object-cover md:aspect-[21/9]"
           />
+        </div>
+        <!-- Sello corporativo: bloque marino con el logotipo y marco desplazado -->
+        <div
+          class="absolute left-[5%] top-1/2 z-[3] hidden aspect-square w-[min(28%,21rem)] -translate-y-1/2 md:block"
+          data-reveal
+          style="--reveal-delay: 500ms"
+        >
+          <span class="absolute -inset-3 border border-white/70 lg:-inset-4" aria-hidden="true"></span>
+          <div class="relative flex h-full w-full flex-col justify-between bg-accent p-6 lg:p-9">
+            <span class="label text-accent-soft">{empresa.coordenadas}</span>
+            <Logo variante="completo" tono="negativo" class="w-full" />
+            <span class="label text-white/60">Santa Eulària des Riu</span>
+          </div>
         </div>
       </div>
       <figcaption class="label mt-5 grid-12 gap-y-6 text-ink-mute">
