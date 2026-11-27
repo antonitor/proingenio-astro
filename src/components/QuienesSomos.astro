@@ -1,38 +1,41 @@
 ---
-import { Building2, Users, Award, Target, MapPin } from "lucide-react";
+import { Image } from "astro:assets";
+import { Building2, Users, Award, Target, MapPin } from "@lucide/astro";
 import equipoFoto from "@/assets/equipo-fran-luis.jpg";
 ---
 
-<section id="quienes-somos" class="py-20 bg-white dark:bg-slate-950">
+<section id="quienes-somos" class="py-20 bg-white">
   <div class="container mx-auto px-4">
     <!-- Presentación de Fran y Luis -->
     <div class="max-w-5xl mx-auto mb-16">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
             Nuestro equipo
           </h2>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-4">
+          <p class="text-lg text-slate-600 mb-4">
             En PROINGENIO trabajamos uniendo experiencia, conocimiento técnico e innovación para ofrecer
             soluciones de ingeniería adaptadas a cada proyecto.
           </p>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-4">
+          <p class="text-lg text-slate-600 mb-4">
             Somos un equipo multidisciplinar que comparte una misma visión: diseñar, coordinar y ejecutar
             proyectos con eficiencia, seguridad y compromiso con la calidad.
           </p>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
-            Desde nuestra oficina en <span class="font-semibold text-slate-900 dark:text-white">Santa Eulalia del Río, Ibiza</span>,
+          <p class="text-lg text-slate-600 mb-6">
+            Desde nuestra oficina en <span class="font-semibold text-slate-900">Santa Eulalia del Río, Ibiza</span>,
             acompañamos a nuestros clientes en cada fase, aportando cercanía y rigor profesional.
           </p>
-          <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
-            <MapPin className="w-5 h-5" />
+          <div class="flex items-center gap-2 text-indigo-600">
+            <MapPin class="w-5 h-5" />
             <span class="font-medium">Santa Eulalia, Ibiza</span>
           </div>
         </div>
         <div class="order-1 md:order-2">
-          <div class="relative h-[400px] rounded-2xl overflow-hidden border-4 border-indigo-100 dark:border-indigo-900/30 shadow-xl">
-            <img
-              src={equipoFoto.src}
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border-4 border-indigo-100 shadow-xl">
+            <Image
+              src={equipoFoto}
+              width={900}
+              quality={80}
               alt="Fran y Luis - Fundadores de PROINGENIO"
               class="w-full h-full object-cover"
             />
@@ -43,53 +46,53 @@ import equipoFoto from "@/assets/equipo-fran-luis.jpg";
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Tarjeta 1: Experiencia -->
-      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
-        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <Building2 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+      <div class="group p-6 bg-slate-50 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200">
+        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Building2 class="w-6 h-6 text-indigo-600" />
         </div>
-        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
           +10 Años de Experiencia
         </h3>
-        <p class="text-slate-600 dark:text-slate-400">
+        <p class="text-slate-600">
           Más de una década desarrollando proyectos de ingeniería de alta calidad en Ibiza y Baleares.
         </p>
       </div>
 
       <!-- Tarjeta 2: Equipo -->
-      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
-        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <Users className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+      <div class="group p-6 bg-slate-50 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200">
+        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Users class="w-6 h-6 text-indigo-600" />
         </div>
-        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
           Equipo Profesional
         </h3>
-        <p class="text-slate-600 dark:text-slate-400">
+        <p class="text-slate-600">
           Ingenieros especializados en diferentes áreas, garantizando soluciones integrales.
         </p>
       </div>
 
       <!-- Tarjeta 3: Calidad -->
-      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
-        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <Award className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+      <div class="group p-6 bg-slate-50 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200">
+        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Award class="w-6 h-6 text-indigo-600" />
         </div>
-        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
           Calidad Certificada
         </h3>
-        <p class="text-slate-600 dark:text-slate-400">
+        <p class="text-slate-600">
           Cumplimiento de normativas y estándares de calidad en todos nuestros proyectos.
         </p>
       </div>
 
       <!-- Tarjeta 4: Compromiso -->
-      <div class="group p-6 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-800">
-        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <Target className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+      <div class="group p-6 bg-slate-50 rounded-lg hover:shadow-lg transition-all duration-300 border border-slate-200">
+        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <Target class="w-6 h-6 text-indigo-600" />
         </div>
-        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
           Compromiso
         </h3>
-        <p class="text-slate-600 dark:text-slate-400">
+        <p class="text-slate-600">
           Dedicados a superar las expectativas de nuestros clientes en cada proyecto.
         </p>
       </div>

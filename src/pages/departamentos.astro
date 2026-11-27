@@ -1,16 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { FileText, Lightbulb, Wrench, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { FileText, Lightbulb, Wrench, Users } from "@lucide/astro";
+import { Image } from "astro:assets";
 import departamentosProyectos from "@/assets/departamentos-proyectos.jpg";
 import instalacionesInteriores from "@/assets/instalaciones-interiores.jpg";
 import departamentosInfraestructuras from "@/assets/departamentos-infraestructuras.jpg";
 import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg";
 ---
 
-<Layout>
+<Layout
+  title="Departamentos | Proingenio"
+  description="Proyectos de actividades, instalaciones interiores, infraestructuras y asesoramiento técnico en Ibiza."
+>
   <!-- Hero section para Departamentos -->
-  <section class="bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-900 dark:to-slate-900 py-16">
+  <section class="bg-gradient-to-br from-indigo-600 to-indigo-800 py-16">
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
         Nuestros Departamentos
@@ -22,57 +25,57 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
   </section>
 
   <!-- Departamento 1: Proyectos de Actividades -->
-  <section id="proyectos-actividades" class="py-20 bg-white dark:bg-slate-950">
+  <section id="proyectos-actividades" class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center">
-              <FileText className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+            <div class="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center">
+              <FileText class="w-8 h-8 text-indigo-600" />
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
               Proyectos de Actividades
             </h2>
           </div>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+          <p class="text-lg text-slate-600 mb-6">
             Especializados en la tramitación y legalización de actividades empresariales.
             Gestionamos todos los permisos y licencias necesarios para que tu negocio opere
             conforme a la normativa vigente.
           </p>
           <ul class="space-y-3 mb-8">
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Licencias de apertura y actividad</span>
+              <span class="text-slate-700">Licencias de apertura y actividad</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Proyectos de adecuación de locales comerciales</span>
+              <span class="text-slate-700">Proyectos de adecuación de locales comerciales</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Cambios de uso y modificaciones</span>
+              <span class="text-slate-700">Cambios de uso y modificaciones</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-indigo-600 dark:text-indigo-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-indigo-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Asesoramiento en normativa municipal</span>
+              <span class="text-slate-700">Asesoramiento en normativa municipal</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Consulta tu proyecto</a>
-          </Button>
+          <a href="/#contacto" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Consulta tu proyecto</a>
         </div>
         <div class="order-1 md:order-2">
-          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-indigo-200 dark:border-indigo-900/30">
-            <img
-              src={departamentosProyectos.src}
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-indigo-200">
+            <Image
+              src={departamentosProyectos}
+              width={900}
+              quality={80}
               alt="Proyectos de Actividades"
               class="w-full h-full object-cover"
             />
@@ -83,13 +86,15 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
   </section>
 
   <!-- Departamento 2: Instalaciones Interiores -->
-  <section id="instalaciones-interiores" class="py-20 bg-slate-50 dark:bg-slate-900">
+  <section id="instalaciones-interiores" class="py-20 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-emerald-200 dark:border-emerald-900/30">
-            <img
-              src={instalacionesInteriores.src}
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-emerald-200">
+            <Image
+              src={instalacionesInteriores}
+              width={900}
+              quality={80}
               alt="Instalaciones Interiores"
               class="w-full h-full object-cover"
             />
@@ -97,116 +102,115 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
         </div>
         <div>
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center">
-              <Lightbulb className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+            <div class="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center">
+              <Lightbulb class="w-8 h-8 text-emerald-600" />
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
               Instalaciones Interiores
             </h2>
           </div>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+          <p class="text-lg text-slate-600 mb-6">
             Diseño y ejecución de instalaciones eléctricas, climatización, fontanería y
             telecomunicaciones para todo tipo de edificios, garantizando eficiencia,
             seguridad y confort.
           </p>
           <ul class="space-y-3 mb-8">
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Instalaciones eléctricas de baja tensión</span>
+              <span class="text-slate-700">Instalaciones eléctricas de baja tensión</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Climatización y ventilación (HVAC)</span>
+              <span class="text-slate-700">Climatización y ventilación (HVAC)</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Fontanería y saneamiento</span>
+              <span class="text-slate-700">Fontanería y saneamiento</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Sistemas de domótica y automatización</span>
+              <span class="text-slate-700">Sistemas de domótica y automatización</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-emerald-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Telecomunicaciones e ICT</span>
+              <span class="text-slate-700">Telecomunicaciones e ICT</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Solicita presupuesto</a>
-          </Button>
+          <a href="/#contacto" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Solicita presupuesto</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Departamento 3: Infraestructuras -->
-  <section id="infraestructuras" class="py-20 bg-white dark:bg-slate-950">
+  <section id="infraestructuras" class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center">
-              <Wrench className="w-8 h-8 text-amber-600 dark:text-amber-400" />
+            <div class="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center">
+              <Wrench class="w-8 h-8 text-amber-600" />
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
               Infraestructuras
             </h2>
           </div>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+          <p class="text-lg text-slate-600 mb-6">
             Proyectos de infraestructura civil y urbana, desde urbanizaciones completas
             hasta obras viales y de servicios públicos, cumpliendo con los más altos
             estándares de calidad.
           </p>
           <ul class="space-y-3 mb-8">
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Proyectos de urbanización</span>
+              <span class="text-slate-700">Proyectos de urbanización</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Viales, pavimentación y señalización</span>
+              <span class="text-slate-700">Viales, pavimentación y señalización</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Redes de agua potable y saneamiento</span>
+              <span class="text-slate-700">Redes de agua potable y saneamiento</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Drenaje y sistemas pluviales</span>
+              <span class="text-slate-700">Drenaje y sistemas pluviales</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-amber-600 dark:text-amber-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-amber-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Obra civil y estructuras</span>
+              <span class="text-slate-700">Obra civil y estructuras</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Inicia tu proyecto</a>
-          </Button>
+          <a href="/#contacto" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Inicia tu proyecto</a>
         </div>
         <div class="order-1 md:order-2">
-          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-amber-200 dark:border-amber-900/30">
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-amber-200">
+            <!-- Se sirve el JPG original: ya está muy comprimido y recodificarlo lo hace más pesado -->
             <img
               src={departamentosInfraestructuras.src}
+              loading="lazy"
+              decoding="async"
               alt="Infraestructuras"
               class="w-full h-full object-cover"
             />
@@ -217,13 +221,15 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
   </section>
 
   <!-- Departamento 4: Asesoramiento e Instaladores -->
-  <section id="asesoramiento" class="py-20 bg-slate-50 dark:bg-slate-900">
+  <section id="asesoramiento" class="py-20 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-blue-200 dark:border-blue-900/30">
-            <img
-              src={departamentosAsesoramiento.src}
+          <div class="relative h-[400px] rounded-2xl overflow-hidden border border-blue-200">
+            <Image
+              src={departamentosAsesoramiento}
+              width={900}
+              quality={80}
               alt="Asesoramiento e Instaladores"
               class="w-full h-full object-cover"
             />
@@ -231,60 +237,58 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
         </div>
         <div>
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
-              <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+              <Users class="w-8 h-8 text-blue-600" />
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
               Asesoramiento e Instaladores
             </h2>
           </div>
-          <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+          <p class="text-lg text-slate-600 mb-6">
             Ofrecemos asesoramiento técnico especializado y contamos con una red de
             instaladores certificados para garantizar la correcta ejecución de todos
             los proyectos.
           </p>
           <ul class="space-y-3 mb-8">
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Consultoría técnica en ingeniería</span>
+              <span class="text-slate-700">Consultoría técnica en ingeniería</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Dirección y supervisión de obras</span>
+              <span class="text-slate-700">Dirección y supervisión de obras</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Red de instaladores certificados</span>
+              <span class="text-slate-700">Red de instaladores certificados</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Control de calidad y certificaciones</span>
+              <span class="text-slate-700">Control de calidad y certificaciones</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mt-0.5 shrink-0">
-                <span class="text-blue-600 dark:text-blue-400 text-sm">✓</span>
+              <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 shrink-0">
+                <span class="text-blue-600 text-sm">✓</span>
               </div>
-              <span class="text-slate-700 dark:text-slate-300">Mantenimiento y postventa</span>
+              <span class="text-slate-700">Mantenimiento y postventa</span>
             </li>
           </ul>
-          <Button asChild size="lg" client:load>
-            <a href="/#contacto">Necesito asesoramiento</a>
-          </Button>
+          <a href="/#contacto" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Necesito asesoramiento</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Final -->
-  <section class="py-16 bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-900 dark:to-slate-900">
+  <section class="py-16 bg-gradient-to-r from-indigo-600 to-indigo-800">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
         ¿Necesitas ayuda con tu proyecto?
@@ -292,11 +296,7 @@ import departamentosAsesoramiento from "@/assets/departamentos-asesoramiento.jpg
       <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
         Nuestro equipo de expertos está listo para asesorarte y convertir tu idea en realidad
       </p>
-      <Button asChild size="lg" variant="outline" client:load>
-        <a href="/#contacto" class="bg-white text-indigo-700 hover:bg-slate-50">
-          Contacta con nosotros
-        </a>
-      </Button>
+      <a href="/#contacto" class="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 font-medium text-indigo-700 hover:bg-slate-100">Contacta con nosotros</a>
     </div>
   </section>
 </Layout>

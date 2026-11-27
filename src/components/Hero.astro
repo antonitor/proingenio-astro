@@ -1,38 +1,39 @@
 ---
-import { Button } from "@/components/ui/button";
+import { Image } from "astro:assets";
 import heroBackground from "@/assets/hero-background.png";
 ---
 
 <section class="relative min-h-[700px] py-20 md:py-32 overflow-hidden flex items-center">
   <!-- Imagen de fondo -->
   <div class="absolute inset-0 z-0">
-    <img
-      src={heroBackground.src}
-      alt="Background"
-      class="w-full h-full object-cover opacity-100 dark:opacity-100"
+    <Image
+      src={heroBackground}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      quality={75}
+      loading="eager"
+      fetchpriority="high"
+      alt=""
+      class="w-full h-full object-cover opacity-100"
     />
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-50/80 to-slate-100/80 dark:from-slate-900/80 dark:to-slate-800/90"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50/80 to-slate-100/80"></div>
   </div>
   <div class="container mx-auto px-4">
     <div class="max-w-3xl mx-auto text-center relative z-10">
       <!-- Contenido de texto -->
       <div class="space-y-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
           PROINGENIO
         </h1>
-        <p class="text-xl md:text-2xl text-slate-900 dark:text-slate-100">
+        <p class="text-xl md:text-2xl text-slate-900">
           Ingeniería de calidad para proyectos excepcionales
         </p>
-        <p class="text-lg text-slate-900 dark:text-slate-100">
+        <p class="text-lg text-slate-900">
           Especialistas en proyectos de actividades, instalaciones interiores e infraestructuras. Comprometidos con la excelencia y la innovación.
         </p>
         <div class="flex flex-wrap gap-4 pt-4 justify-center">
-          <Button asChild size="lg" client:load>
-            <a href="#quienes-somos">Conócenos</a>
-          </Button>
-          <Button asChild variant="outline" size="lg" client:load>
-            <a href="#proyectos">Ver proyectos</a>
-          </Button>
+          <a href="#quienes-somos" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Conócenos</a>
+          <a href="#proyectos" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-50">Ver proyectos</a>
         </div>
       </div>
     </div>
@@ -44,7 +45,6 @@ import heroBackground from "@/assets/hero-background.png";
       <path
         d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
         fill="white"
-        class="dark:fill-slate-950"
       />
     </svg>
   </div>
