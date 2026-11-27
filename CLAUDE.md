@@ -89,3 +89,5 @@ Handled by **Netlify Forms** (`data-netlify="true"`, form name `contacto`, honey
 ## Deployment
 
 Netlify, configured in `netlify.toml` (build `npm run build`, publish `dist`). No SPA redirect: Astro emits one HTML file per page plus `404.html`. Pushing to `main` triggers a deploy.
+
+Staging domain: `dev.proingenio.es` (CNAME in Hostinger DNS → the `*.netlify.app` site; nameservers stay at Hostinger because Google Workspace mail records live there). While the client has not approved the site, `netlify.toml` sends `X-Robots-Tag: noindex, nofollow` on every path; remove that `[[headers]]` block when going live on the final domain.

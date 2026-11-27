@@ -5,3 +5,11 @@
 
 # Astro genera un .html por página y un 404.html, así que no hace falta
 # ninguna redirección tipo SPA: Netlify sirve 404.html automáticamente.
+
+# TEMPORAL: mientras la web está en dev.proingenio.es y pendiente de aprobación,
+# se pide a los buscadores que no la indexen. Borrar este bloque al publicar
+# en el dominio definitivo.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
