@@ -1,16 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import QuienesSomos from "../components/QuienesSomos.astro";
-import Stats from "../components/Stats.astro";
-import ProyectosDestacados from "../components/ProyectosDestacados.astro";
-import Contacto from "../components/Contacto.astro";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import QuienesSomos from "@/components/QuienesSomos.astro";
+import Servicios from "@/components/Servicios.astro";
+import Contacto from "@/components/Contacto.astro";
 ---
 
-<Layout>
+<Layout footerCta={false}>
   <Hero />
   <QuienesSomos />
-  <Stats />
-  <ProyectosDestacados />
+  <Servicios />
   <Contacto />
 </Layout>

@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import SectionHeader from "@/components/SectionHeader.astro";
+import { departamentos } from "@/data/site";
+---
+
+<section id="departamentos" class="bg-lime py-24 md:py-36">
+  <div class="wrap">
+    <SectionHeader
+      numero="02"
+      etiqueta="Departamentos"
+      titulo="Cuatro áreas técnicas, un mismo equipo."
+      intro="Cada encargo se resuelve de forma integral: proyecto, tramitación y seguimiento de la obra, coordinando todas las disciplinas que intervienen."
+      enlace={{ href: "/departamentos", texto: "Todos los servicios" }}
+    />
+
+    <ul class="mt-16 border-b border-line md:mt-24">
+      {
+        departamentos.map((d, i) => (
+          <li class="border-t border-line" data-reveal style={`--reveal-delay: ${i * 60}ms`}>
+            <a
+              href={`/departamentos#${d.id}`}
+              class="group grid-12 items-center gap-y-3 py-8 transition-colors duration-300 hover:bg-paper md:py-10"
+            >
+              <span class="label col-span-1 pl-0 text-accent transition-[padding] duration-500 group-hover:md:pl-4">
+                {d.codigo}
+              </span>
+              <h3 class="col-span-3 text-2xl font-semibold tracking-tight transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:md:translate-x-2 md:col-span-5 md:text-[2rem] lg:col-span-5">
+                {d.titulo}
+              </h3>
+              <p class="col-span-3 col-start-2 text-ink-soft md:col-span-4 md:col-start-7 lg:col-span-3 lg:col-start-7">
+                {d.resumen}
+              </p>
+              <div class="col-span-2 col-start-10 hidden overflow-hidden lg:block">
+                <Image
+                  src={d.imagen}
+                  width={320}
+                  quality={70}
+                  alt=""
+                  class="photo aspect-[4/3] w-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0"
+                />
+              </div>
+              <span class="arrow-link col-span-1 col-start-12 hidden justify-self-end pr-0 transition-[padding] duration-500 group-hover:pr-4 md:inline-flex">
+                <span class="arrow" aria-hidden="true" />
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

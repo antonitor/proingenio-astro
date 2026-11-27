@@ -1,20 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { CheckCircle2 } from "@lucide/astro";
+import PageHeader from "@/components/PageHeader.astro";
 ---
 
-<Layout title="Mensaje enviado | Proingenio" noindex>
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-xl text-center">
-      <CheckCircle2 class="w-16 h-16 mx-auto mb-6 text-emerald-500" />
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-        ¡Gracias por tu mensaje!
-      </h1>
-      <p class="text-lg text-slate-600 mb-8">
-        Lo hemos recibido correctamente. Te responderemos lo antes posible, normalmente en
-        uno o dos días laborables.
-      </p>
-      <a href="/" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Volver al inicio</a>
+<Layout title="Mensaje enviado · Proingenio" noindex>
+  <PageHeader
+    ruta="Mensaje enviado"
+    titulo="Gracias, hemos recibido tu consulta."
+    intro="La revisaremos y te responderemos personalmente, normalmente en uno o dos días laborables."
+  >
+    <div class="mt-12 flex flex-wrap gap-4" data-reveal style="--reveal-delay: 240ms">
+      <a href="/" class="btn btn-primary">Volver al inicio <span aria-hidden="true">→</span></a>
+      <a href="/departamentos" class="btn btn-ghost">Ver departamentos</a>
     </div>
-  </section>
+  </PageHeader>
 </Layout>

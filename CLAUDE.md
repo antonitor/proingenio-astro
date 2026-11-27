@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static website (SSG) for Proingenio, an engineering office in Santa Eulalia del Río (Ibiza). Built with Astro and Tailwind CSS v4, deployed to Netlify. Site language: Spanish.
 
-The visual design is intentionally plain default Tailwind for now; a dedicated design phase will come later.
+Art direction: "Architectural Editorial / Engineering Corporate" (references: Arup, IDOM, BuroHappold, Ramboll). Precise, sober, generous white space; local Ibiza personality without touristy imagery.
 
 ## Development Commands
 
@@ -20,29 +20,45 @@ npm run preview    # preview the production build
 ## Tech Stack
 
 - **Astro 5**, fully static output. No UI framework (no React): pages and components are `.astro` only.
-- **Tailwind CSS v4** via the Vite plugin (`src/styles/global.css` just imports Tailwind).
-- **Icons**: `@lucide/astro` (`import { Mail } from "@lucide/astro"`, use `class`, not `className`).
-- **Images**: use `<Image>` from `astro:assets` with images in `src/assets/`. Exception: `departamentos-infraestructuras.jpg` is served as the original JPG because re-encoding made it larger.
+- **Tailwind CSS v4** via the Vite plugin; design tokens in `src/styles/global.css`.
+- **No icon library.** Avoid decorative icons; use numbering, thin rules and text links with arrows instead.
+- **Images**: use `<Image>` from `astro:assets` with images in `src/assets/`. All photos get the `photo` class for a consistent treatment.
 - **Light mode only.** There is no dark mode; do not add `dark:` classes.
 - Interactivity is plain `<script>` inside `.astro` components (e.g. the mobile menu in `Navbar.astro`).
+
+## Design System
+
+Tokens and utilities live in `src/styles/global.css`:
+
+- **Colors**: `ink`, `ink-soft`, `ink-mute`, `paper` (white), `lime` (warm whitewash, alternate sections), `stone`, `line`, `line-dark`, single accent `accent` (blueprint blue taken from the logo). No gradients.
+- **Type**: Inter Tight (`font-display`, headings), Inter (body), IBM Plex Mono (`font-mono`, labels and numbering). Self-hosted via Fontsource; never load Google Fonts.
+- **Utilities**: `wrap` (max 1440px container), `grid-12` (4 cols mobile / 12 cols md+), `label` (mono uppercase), `display-xl/lg/md`, `lead`, `photo` (common desaturated photo treatment), `crop-marks` (plan-style corner ticks), `blueprint` (faint grid background).
+- **Components (CSS)**: `.btn` + `.btn-primary/.btn-ghost/.btn-light` (square corners), `.arrow-link` (text link with growing arrow), `.field` (underline-only form inputs).
+- **Animation**: add `data-reveal` (fade up), `data-reveal="line"` (rule draws in) or `data-reveal="image"` (curtain); optional `style="--reveal-delay: 80ms"`. Driven by the observer in `Layout.astro`; content is visible without JS and with reduced motion.
+- **Astro components**: `SectionHeader` (numbered section header: numero, etiqueta, titulo, intro, enlace), `PageHeader` (interior page header with breadcrumb + slot).
+- **Content data**: `src/data/site.ts` holds company info, navigation, departments, projects and figures; Navbar, Footer and pages read from it.
 
 ## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── Navbar.astro           # Header + dropdown + mobile menu
-│   ├── Footer.astro
-│   ├── Hero.astro, QuienesSomos.astro, ProyectosDestacados.astro, Contacto.astro  # home sections
+│   ├── Navbar.astro           # Header, departments dropdown, full-screen mobile menu
+│   ├── Footer.astro           # Dark footer (prop `cta` toggles the closing call to action)
+│   ├── Hero.astro, QuienesSomos.astro, Servicios.astro, ProyectosDestacados.astro, Contacto.astro  # home: hero + sections 01–03
+│   ├── ProyectosDestacados.astro  # Unused for now: projects grid for the future /proyectos page
+│   ├── SectionHeader.astro, PageHeader.astro
 │   └── LegalPage.astro        # Wrapper for legal pages (prose styles, .pendiente highlight)
-├── layouts/Layout.astro       # Base layout; props: title, description, noindex
+├── data/site.ts               # Shared content (company, departments, projects, figures)
+├── layouts/Layout.astro       # Base layout; props: title, description, noindex, footerCta
 ├── pages/
 │   ├── index.astro            # Home
 │   ├── departamentos.astro
-│   ├── aviso-legal.astro, privacidad.astro, cookies.astro
+│   ├── proyectos.astro        # Under construction
+│   ├── aviso-legal.astro, privacidad.astro   # No cookies page: the site sets no cookies (stated in privacidad)
 │   ├── gracias.astro          # Contact form success page
 │   └── 404.astro
-├── styles/global.css
+├── styles/global.css          # Design tokens and utilities
 └── assets/                    # Images (optimized at build time)
 ```
 
@@ -51,9 +67,9 @@ Path alias: `@/*` → `./src/*`.
 ## Navigation
 
 Main menu (Navbar.astro):
-- Quienes somos → `/#quienes-somos`
-- Departamentos → `/departamentos` with anchors `#proyectos-actividades`, `#instalaciones-interiores`, `#infraestructuras`, `#asesoramiento`
-- Proyectos destacados → `/#proyectos`
+- Quiénes somos → `/#estudio`
+- Departamentos → `/departamentos` with anchors, in this order: `#instalaciones-interiores` (01), `#infraestructuras` (02), `#proyectos-actividades` (03), `#asesoramiento` (04)
+- Proyectos → `/proyectos` (under construction for now; `ProyectosDestacados.astro` + `proyectos` in `site.ts` are ready to reuse there once there are real projects)
 - Contacto → `/#contacto`
 
 Keep anchors in Navbar, Footer and page section ids in sync.
@@ -64,10 +80,9 @@ Handled by **Netlify Forms** (`data-netlify="true"`, form name `contacto`, honey
 
 ## Content Status
 
-- Legal pages contain placeholders highlighted with `<span class="pendiente">` (company name, NIF/CIF, registry data). They must be filled in by the company before launch.
-- Projects in `ProyectosDestacados.astro` are placeholder examples and must be replaced with real projects.
-- Figures in `Stats.astro` (projects, clients, success rate) are unconfirmed examples.
-- Fonts (Inter for body, Outfit for headings) are self-hosted via Fontsource; do not load Google Fonts (GDPR, and the cookies page states there are no third-party requests).
+- Legal pages are filled in with the company data (PROINGENIO INGENIERÍA TÉCNICA S.L., CIF B19479419, Local 6). The `.pendiente` class in `LegalPage.astro` remains available to highlight any future missing data.
+- Projects (unused) and figures in `src/data/site.ts` are placeholder content and must be replaced with real data.
+- All current photos are stock placeholders (several carry 123RF watermarks), including `equipo-fran-luis.jpg`, which is not a photo of the team.
 
 ## Deployment
 

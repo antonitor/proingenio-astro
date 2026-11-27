@@ -1,20 +1,326 @@
 @import "tailwindcss";
 /* Fuentes alojadas en el propio sitio (sin Google Fonts: no se envía la IP del visitante a terceros) */
 @import "@fontsource-variable/inter";
-@import "@fontsource-variable/outfit";
+@import "@fontsource-variable/inter-tight";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+/* ==========================================================================
+   Sistema de diseño Proingenio — "Architectural Editorial"
+   ========================================================================== */
 
 @theme {
+  /* Tipografía */
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Tight Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Color: tinta, papel de cal, piedra y un único acento azul de plano */
+  --color-ink: #121417;
+  --color-ink-soft: #4a4f57;
+  --color-ink-mute: #7a7f87;
+  --color-paper: #ffffff;
+  --color-lime: #f6f4ef; /* blanco de cal: fondo alterno */
+  --color-stone: #e9e5dc;
+  --color-line: #d9d5cc;
+  --color-line-dark: #2c3036;
+  --color-accent: #3a44a0;
+  --color-accent-deep: #2a3279;
+
+  /* Bordes: rectos o apenas redondeados */
+  --radius-xs: 2px;
+
+  /* Movimiento */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* compensa la cabecera fija al saltar a un ancla */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
 }
 
-h1,
-h2,
-h3,
-h4 {
+/* Contenedor de la retícula: 12 columnas con márgenes generosos */
+@utility wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 4rem;
+  }
+}
+
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 1.25rem;
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
+}
+
+/* Etiquetas técnicas: numeración, metadatos y pies de figura */
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Titulares */
+@utility display-xl {
   font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 1.4rem + 5.2vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.032em;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 1.3rem + 3.2vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+}
+
+@utility lead {
+  font-size: clamp(1.1rem, 1rem + 0.45vw, 1.375rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* Tratamiento fotográfico común: unifica imágenes de distinta procedencia */
+@utility photo {
+  filter: saturate(0.6) contrast(1.05) brightness(1.02);
+  transition:
+    transform 900ms var(--ease-out-quint),
+    filter 900ms var(--ease-out-quint);
+}
+
+/* Marcas de corte de plano en las esquinas de una figura */
+@utility crop-marks {
+  position: relative;
+  --m: 14px;
+  --c: var(--color-ink);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: var(--m);
+    height: var(--m);
+    pointer-events: none;
+    z-index: 2;
+  }
+  &::before {
+    top: calc(var(--m) * -0.6);
+    left: calc(var(--m) * -0.6);
+    border-top: 1px solid var(--c);
+    border-left: 1px solid var(--c);
+  }
+  &::after {
+    bottom: calc(var(--m) * -0.6);
+    right: calc(var(--m) * -0.6);
+    border-bottom: 1px solid var(--c);
+    border-right: 1px solid var(--c);
+  }
+}
+
+/* Retícula de fondo tipo papel milimetrado, muy tenue */
+@utility blueprint {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-ink) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 6%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@layer components {
+  /* Botones: rectos, sólidos, sin degradados */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.95rem 1.4rem;
+    border-radius: var(--radius-xs);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    transition:
+      background-color 250ms ease,
+      color 250ms ease,
+      border-color 250ms ease;
+  }
+  .btn-primary {
+    background: var(--color-ink);
+    color: white;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent);
+  }
+  .btn-ghost {
+    border: 1px solid var(--color-ink);
+    color: var(--color-ink);
+  }
+  .btn-ghost:hover {
+    background: var(--color-ink);
+    color: white;
+  }
+  .btn-light {
+    background: white;
+    color: var(--color-ink);
+  }
+  .btn-light:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  /* Enlace con flecha: la línea se alarga al pasar el ratón */
+  .arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+  }
+  .arrow-link .arrow {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 400ms var(--ease-out-quint);
+  }
+  .arrow-link .arrow::before {
+    content: "";
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: currentColor;
+    transition: width 400ms var(--ease-out-quint);
+  }
+  .arrow-link .arrow::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    transform: translateX(-7px) rotate(45deg);
+  }
+  .arrow-link:hover .arrow::before,
+  .group:hover .arrow-link .arrow::before {
+    width: 2.5rem;
+  }
+
+  /* Campos de formulario: solo línea inferior, como en un plano */
+  .field {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-line);
+    border-radius: 0;
+    font-size: 1rem;
+    color: var(--color-ink);
+    transition: border-color 250ms ease;
+  }
+  .field::placeholder {
+    color: var(--color-ink-mute);
+  }
+  .field:focus {
+    outline: none;
+    border-bottom-color: var(--color-accent);
+  }
+}
+
+/* ==========================================================================
+   Animaciones discretas de aparición (solo si hay JS y sin movimiento reducido)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 900ms var(--ease-out-quint),
+      transform 900ms var(--ease-out-quint);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Línea que se dibuja de izquierda a derecha */
+  .js [data-reveal="line"] {
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1200ms var(--ease-out-quint);
+  }
+  .js [data-reveal="line"].is-visible {
+    transform: scaleX(1);
+  }
+
+  /* Imagen que se descubre con una cortina */
+  .js [data-reveal="image"] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1400ms var(--ease-out-quint);
+  }
+  .js [data-reveal="image"].is-visible {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

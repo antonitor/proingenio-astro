@@ -1,21 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import PageHeader from "@/components/PageHeader.astro";
 ---
 
-<Layout title="Página no encontrada | Proingenio" noindex>
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-xl text-center">
-      <p class="text-6xl font-bold text-indigo-600 mb-4">404</p>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-        Página no encontrada
-      </h1>
-      <p class="text-lg text-slate-600 mb-8">
-        La página que buscas no existe o se ha movido.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Ir al inicio</a>
-        <a href="/#contacto" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-50">Contactar</a>
-      </div>
+<Layout title="Página no encontrada · Proingenio" noindex>
+  <PageHeader
+    ruta="Error 404"
+    titulo="Esta página no está en el plano."
+    intro="La dirección que buscas no existe o se ha movido."
+  >
+    <div class="mt-12 flex flex-wrap gap-4" data-reveal style="--reveal-delay: 240ms">
+      <a href="/" class="btn btn-primary">Ir al inicio <span aria-hidden="true">→</span></a>
+      <a href="/#contacto" class="btn btn-ghost">Contactar</a>
     </div>
-  </section>
+  </PageHeader>
 </Layout>

@@ -1,52 +1,79 @@
 ---
 import { Image } from "astro:assets";
-import heroBackground from "@/assets/proyecto.jpg";
+import heroImagen from "@/assets/proyecto.jpg";
+import { empresa } from "@/data/site";
+
+const indice = [
+  { n: "01", label: "Quiénes somos", href: "#estudio" },
+  { n: "02", label: "Departamentos", href: "#departamentos" },
+  { n: "03", label: "Contacto", href: "#contacto" },
+];
 ---
 
-<section class="relative min-h-[700px] py-20 md:py-32 overflow-hidden flex items-center">
-  <!-- Imagen de fondo -->
-  <div class="absolute inset-0 z-0">
-    <Image
-      src={heroBackground}
-      widths={[768, 1280, 1920]}
-      sizes="100vw"
-      quality={75}
-      loading="eager"
-      fetchpriority="high"
-      alt=""
-      class="w-full h-full object-cover opacity-100"
-    />
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-50/80 to-slate-100/80"></div>
-  </div>
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center relative z-10">
-      <!-- Contenido de texto -->
-      <div class="space-y-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-          PROINGENIO
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-900">
-          Ingeniería de calidad para proyectos excepcionales
-        </p>
-        <p class="text-lg text-slate-900">
-          Especialistas en proyectos de actividades, instalaciones interiores e infraestructuras. Comprometidos con la excelencia y la innovación.
-        </p>
-        <div class="flex flex-wrap gap-4 pt-4 justify-center">
-          <a href="#quienes-somos" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700">Conócenos</a>
-          <a href="#proyectos" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-50">Ver proyectos</a>
-        </div>
+<section class="relative overflow-hidden">
+  <div class="wrap pt-10 md:pt-16">
+    <!-- Metadatos en la línea superior -->
+    <div class="label grid-12 gap-y-2 text-ink-mute" data-reveal>
+      <p class="col-span-4 md:col-span-3">{empresa.descriptor}</p>
+      <p class="col-span-4 md:col-span-3">{empresa.ubicacion}</p>
+      <p class="col-span-2 hidden md:col-span-3 md:block">{empresa.coordenadas}</p>
+    </div>
+
+    <!-- Titular -->
+    <div class="grid-12 mt-10 gap-y-10 md:mt-16">
+      <h1 class="display-xl col-span-4 md:col-span-11 lg:col-span-10" data-reveal style="--reveal-delay: 80ms">
+        Ingeniería de proyectos, instalaciones y actividades
+        <span class="text-ink-mute">en Ibiza.</span>
+      </h1>
+    </div>
+
+    <div class="grid-12 mt-10 gap-y-8 md:mt-14">
+      <p class="lead col-span-4 text-ink-soft md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-4" data-reveal style="--reveal-delay: 160ms">
+        Redactamos proyectos técnicos, dirigimos obras y tramitamos licencias ante los ayuntamientos de la isla, con un único
+        interlocutor de principio a fin.
+      </p>
+      <div class="col-span-4 flex flex-wrap items-end gap-x-10 gap-y-4 md:col-span-3 md:col-start-10 md:flex-col md:items-start md:justify-end" data-reveal style="--reveal-delay: 240ms">
+        <a href="/departamentos" class="arrow-link">Ver departamentos <span class="arrow" aria-hidden="true"></span></a>
+        <a href="#contacto" class="arrow-link text-ink-soft hover:text-ink">Solicitar presupuesto <span class="arrow" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
 
-  <!-- Onda decorativa en la parte inferior -->
-  <div class="absolute bottom-0 left-0 right-0">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-      <path
-        d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-        fill="white"
-      />
-    </svg>
+  <!-- Fotografía principal -->
+  <div class="wrap mt-14 md:mt-20">
+    <figure>
+      <div class="crop-marks">
+        <div class="overflow-hidden" data-reveal="image">
+          <Image
+            src={heroImagen}
+            widths={[640, 960, 1280, 1920]}
+            sizes="(min-width: 1440px) 1312px, 100vw"
+            quality={78}
+            loading="eager"
+            fetchpriority="high"
+            alt="Equipo técnico revisando documentación de un proyecto"
+            class="photo aspect-[4/3] w-full object-cover md:aspect-[21/9]"
+          />
+        </div>
+      </div>
+      <figcaption class="label mt-5 grid-12 gap-y-6 text-ink-mute">
+        <span class="col-span-4 md:col-span-3">Fig. 01 — Revisión de proyecto</span>
+        <!-- Índice de la página -->
+        <nav class="col-span-4 md:col-span-9" aria-label="Índice de la página">
+          <ol class="grid grid-cols-2 gap-x-6 gap-y-2 md:grid-cols-3">
+            {
+              indice.map((i) => (
+                <li>
+                  <a href={i.href} class="flex gap-3 border-t border-line pt-3 transition-colors hover:border-ink hover:text-ink">
+                    <span class="text-accent">{i.n}</span>
+                    {i.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ol>
+        </nav>
+      </figcaption>
+    </figure>
   </div>
 </section>
-

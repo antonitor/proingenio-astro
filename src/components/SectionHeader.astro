@@ -1,0 +1,60 @@
+---
+/**
+ * Cabecera de sección numerada: línea fina superior, índice + etiqueta en
+ * la columna izquierda y titular desplazado en la retícula.
+ */
+interface Props {
+  numero: string;
+  etiqueta: string;
+  titulo: string;
+  intro?: string;
+  enlace?: { href: string; texto: string };
+  oscuro?: boolean;
+  id?: string;
+}
+
+const { numero, etiqueta, titulo, intro, enlace, oscuro = false, id } = Astro.props;
+---
+
+<header class="relative pt-6" id={id}>
+  <div
+    data-reveal="line"
+    class:list={["absolute inset-x-0 top-0 h-px", oscuro ? "bg-line-dark" : "bg-line"]}
+  >
+  </div>
+  <div class="grid-12 gap-y-6">
+    <p
+      class:list={["label col-span-4 md:col-span-3 flex gap-5", oscuro ? "text-white/60" : "text-ink-mute"]}
+      data-reveal
+    >
+      <span class={oscuro ? "text-white" : "text-accent"}>{numero}</span>
+      <span>{etiqueta}</span>
+    </p>
+    <div class="col-span-4 flex flex-col gap-8 md:col-span-9 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <h2 class="display-lg max-w-[16ch]" data-reveal style="--reveal-delay: 80ms">
+          {titulo}
+        </h2>
+        {
+          intro && (
+            <p
+              class:list={["lead mt-8 max-w-[56ch]", oscuro ? "text-white/70" : "text-ink-soft"]}
+              data-reveal
+              style="--reveal-delay: 160ms"
+            >
+              {intro}
+            </p>
+          )
+        }
+      </div>
+      {
+        enlace && (
+          <a href={enlace.href} class="arrow-link shrink-0 self-start pb-1.5 lg:self-end" data-reveal style="--reveal-delay: 200ms">
+            {enlace.texto}
+            <span class="arrow" aria-hidden="true" />
+          </a>
+        )
+      }
+    </div>
+  </div>
+</header>

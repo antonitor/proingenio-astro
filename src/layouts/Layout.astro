@@ -7,12 +7,14 @@ interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  footerCta?: boolean;
 }
 
 const {
-  title = "Proingenio - Ingeniería de Calidad",
-  description = "Proingenio - Ingeniería de calidad para proyectos excepcionales. Especialistas en proyectos de actividades, instalaciones interiores e infraestructuras.",
+  title = "Proingenio · Oficina técnica de ingeniería en Ibiza",
+  description = "Oficina técnica de ingeniería en Santa Eulària des Riu, Ibiza. Proyectos de instalaciones interiores, infraestructuras y actividades, y asesoramiento a instaladores.",
   noindex = false,
+  footerCta = true,
 } = Astro.props;
 ---
 
@@ -24,14 +26,41 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
     {noindex && <meta name="robots" content="noindex" />}
     <title>{title}</title>
+    <!-- Marca que hay JS para activar las animaciones de aparición (sin JS todo se ve) -->
+    <script is:inline>document.documentElement.classList.add("js");</script>
   </head>
-  <body class="min-h-screen bg-white text-slate-900 antialiased">
+  <body class="min-h-screen">
+    <a href="#contenido" class="label sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-ink focus:px-4 focus:py-3 focus:text-white">
+      Saltar al contenido
+    </a>
     <Navbar />
-    <main>
+    <main id="contenido">
       <slot />
     </main>
-    <Footer />
+    <Footer cta={footerCta} />
+
+    <script>
+      // Aparición discreta de elementos al entrar en pantalla
+      const elementos = document.querySelectorAll<HTMLElement>("[data-reveal]");
+      if (!("IntersectionObserver" in window)) {
+        elementos.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+        );
+        elementos.forEach((el) => observer.observe(el));
+      }
+    </script>
   </body>
 </html>
